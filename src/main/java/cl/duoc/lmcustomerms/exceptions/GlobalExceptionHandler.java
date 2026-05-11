@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(IdExisteException.class)
-    public ProblemDetail handlerDuplicadoID(IdExisteException exception){
+    public ProblemDetail handlerNoExisteID(IdExisteException exception){
         ProblemDetail problemDetail = ProblemDetail.forStatus(409); //HTTP 409 = conlficto de datos
         problemDetail.setTitle(title2);
         problemDetail.setDetail(exception.getMessage());
@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(IdNoExisteException.class)
-    public ProblemDetail handlerDuplicadoID(IdNoExisteException exception){
+    public ProblemDetail handlerNoExisteID(IdNoExisteException exception){
         ProblemDetail problemDetail = ProblemDetail.forStatus(404); //HTTP 404 = no encontrado
         problemDetail.setTitle(title3);
         problemDetail.setDetail(exception.getMessage());
@@ -63,6 +63,30 @@ public class GlobalExceptionHandler {
     public ProblemDetail handlerDuplicadoEmail(ClienteEmailExisteException exception ){
         ProblemDetail problemDetail = ProblemDetail.forStatus(409);
         problemDetail.setTitle(title2);
+        problemDetail.setDetail(exception.getMessage());
+        return problemDetail;
+    }
+
+    @ExceptionHandler(ClienteFonoNoExisteException.class)
+    public ProblemDetail handlerNoExisteFono(ClienteFonoNoExisteException exception){
+        ProblemDetail problemDetail = ProblemDetail.forStatus(404); //HTTP 404 = no encontrado
+        problemDetail.setTitle(title3);
+        problemDetail.setDetail(exception.getMessage());
+        return problemDetail;
+    }
+
+    @ExceptionHandler(ClienteEmailNoExisteException.class)
+    public ProblemDetail handlerNoExisteFono(ClienteEmailNoExisteException exception){
+        ProblemDetail problemDetail = ProblemDetail.forStatus(404); //HTTP 404 = no encontrado
+        problemDetail.setTitle(title3);
+        problemDetail.setDetail(exception.getMessage());
+        return problemDetail;
+    }
+
+    @ExceptionHandler(ClienteNumrunNoExisteException.class)
+    public ProblemDetail handlerNoExisteNumRun(ClienteNumrunNoExisteException exception){
+        ProblemDetail problemDetail = ProblemDetail.forStatus(404); //HTTP 404 = no encontrado
+        problemDetail.setTitle(title3);
         problemDetail.setDetail(exception.getMessage());
         return problemDetail;
     }

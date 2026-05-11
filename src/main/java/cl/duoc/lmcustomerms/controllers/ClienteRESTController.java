@@ -29,11 +29,11 @@ public class ClienteRESTController {
 
     //CREATE:
     @PostMapping
-    public ResponseEntity<ClienteResponseDTO> save(@Valid @RequestBody ClienteInputDTO objAux){
+    public ResponseEntity<ClienteResponseDTO> save(@Valid @RequestBody ClienteInputDTO dto){
         String logMsgRequest = "Recibiendo solicitud para crear/guardar cliente.";
         String logMsg = "Solicitud para crear/guardar cliente.";
         logger.info(logMsgRequest);
-        ClienteResponseDTO created = clienteService.save(objAux);
+        ClienteResponseDTO created = clienteService.save(dto);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(created.getId()).toUri();
                     //de componentes de constructor URI // de la actual request //ruta de id // sacar la id del obj creado // transformar a URI.
         logger.info(logMsg + "=> creado con ID: {}, R.U.N.: {}, correo: {}, fono: {}.", created.getId(), created.getRun(), created.getEmail(), created.getFono());

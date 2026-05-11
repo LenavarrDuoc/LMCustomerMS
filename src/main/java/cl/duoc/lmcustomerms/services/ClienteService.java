@@ -4,9 +4,7 @@ import cl.duoc.lmcustomerms.dtos.ClienteInputDTO;
 import cl.duoc.lmcustomerms.dtos.ClienteOrderResponseDTO;
 import cl.duoc.lmcustomerms.dtos.ClienteResponseDTO;
 import cl.duoc.lmcustomerms.dtos.ClienteUpdateDTO;
-import cl.duoc.lmcustomerms.exceptions.ClienteEmailExisteException;
-import cl.duoc.lmcustomerms.exceptions.ClienteNumrunExisteException;
-import cl.duoc.lmcustomerms.exceptions.IdNoExisteException;
+import cl.duoc.lmcustomerms.exceptions.*;
 import cl.duoc.lmcustomerms.mappers.ClienteInputMapper;
 import cl.duoc.lmcustomerms.mappers.ClienteOrderResponseMapper;
 import cl.duoc.lmcustomerms.mappers.ClienteResponseMapper;
@@ -42,16 +40,17 @@ public class ClienteService {
 
     //CREATE:
     @Transactional
-    public ClienteResponseDTO save(ClienteInputDTO objAux){
-        if (clienteRepository.existsByNumrun(objAux.getNumrun())){
+    public ClienteResponseDTO save(ClienteInputDTO ent){
+        if (clienteRepository.existsByNumrun(ent.getNumrun())){
             throw new ClienteNumrunExisteException("R.U.N. de cliente ya existe.");
-        } else if (clienteRepository.existsByEmail(objAux.getEmail())){
+        } else if (clienteRepository.existsByEmail(ent.getEmail())){
             throw new ClienteEmailExisteException("Correo electrónico de cliente ya existe.");
         }
 
         //permite dejar la primera dirección ingresada como la por defecto para el cliente.
 
-        return clienteResponseMapper.toDto(clienteRepository.save(clienteInputMapper.toEntity(objAux)));
+        return clienteResponseMapper.toDto(clienteRepository.save(clienteInputMapper.toEntity(ent)));
+
     }
 
 
@@ -63,12 +62,16 @@ public class ClienteService {
 
     @Transactional(readOnly = true)
     public ClienteOrderResponseDTO findById(Long id){
-        return clienteOrderResponseMapper.toDto(clienteRepository.findById(id).orElse(null));
+        return clienteOrderResponseMapper.toDto(clienteRepository.findById(id).orElseThrow(() -> new IdNoExisteException("ID de cliente no existe."))) ;
     }
 
     @Transactional(readOnly = true)
-    public ClienteResponseDTO findByNumRun(Integer numrun){
-        return clienteResponseMapper.toDto(clienteRepository.findByNumrun(numrun));
+    public ClienteResponseDTO findByNumRun(Integer numRun){
+        Cliente ent = clienteRepository.findByNumrun(numRun);
+        if (ent == null){
+            throw new ClienteNumrunNoExisteException("R.U.N. de cliente no existe.");
+        }
+        return clienteResponseMapper.toDto(ent);
     }
 
     @Transactional(readOnly = true)
@@ -78,22 +81,30 @@ public class ClienteService {
 
     @Transactional(readOnly = true)
     public ClienteResponseDTO findByEmail(String email){
-        return clienteResponseMapper.toDto(clienteRepository.findByEmail(email));
+        Cliente ent = clienteRepository.findByEmail(email);
+        if (ent == null){
+            throw new ClienteEmailNoExisteException("Correo de cliente no existe.");
+        }
+        return clienteResponseMapper.toDto(ent);
     }
 
     @Transactional(readOnly = true)
     public ClienteResponseDTO findByFono(String fono){
-        return clienteResponseMapper.toDto(clienteRepository.findByFono(fono));
+        Cliente ent = clienteRepository.findByFono(fono);
+        if (ent == null){
+            throw new ClienteFonoNoExisteException("Fono de cliente no existe.");
+        }
+        return clienteResponseMapper.toDto(ent);
     }
 
 
     //UPDATE:
     @Transactional
-    public ClienteResponseDTO update(ClienteUpdateDTO objAux){
+    public ClienteResponseDTO update(ClienteUpdateDTO dto){
 
         //TODO: Se debe arregllar: expone a la entidad Cliente directamente en Service cuando se podría procesar en el mapper.
-        Cliente pio = clienteRepository.findById(objAux.getId()).orElseThrow(() -> new IdNoExisteException("ID de cliente no existe."));
-        return clienteResponseMapper.toDto(clienteRepository.save(clienteUpdateMapper.toEntity(pio, objAux)));
+        Cliente ent = clienteRepository.findById(dto.getId()).orElseThrow(() -> new IdNoExisteException("ID de cliente no existe."));
+        return clienteResponseMapper.toDto(clienteRepository.save(clienteUpdateMapper.toEntity(ent, dto)));
     }
 
     //DELETE:
@@ -103,6 +114,8 @@ public class ClienteService {
         if (clienteRepository.existsById(id)){
             clienteRepository.deleteById(id);
             centinela = true;
+        } else {
+            throw new IdNoExisteException("ID de cliente no existe.");
         }
         return centinela;
     }

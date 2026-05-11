@@ -18,34 +18,34 @@ public class ClienteInputMapper {
     public Cliente toEntity(ClienteInputDTO dto){
 
         if (dto != null) {
-            Cliente pio = new Cliente();    //pio = Persistence Instance Object.
+            Cliente ent = new Cliente();    //ent = entidad en capa de persistencia.
 
 
-            pio.setNumrun(dto.getNumrun());
-            pio.setDvrun(dto.getDvrun());
-            pio.setPnombre(dto.getPnombre());
-            pio.setSnombre(dto.getSnombre());
-            pio.setAppaterno(dto.getAppaterno());
-            pio.setApmaterno(dto.getApmaterno());
-            pio.setEmail(dto.getEmail());
-            pio.setFono(dto.getFono());
+            ent.setNumrun(dto.getNumrun());
+            ent.setDvrun(dto.getDvrun());
+            ent.setPnombre(dto.getPnombre());
+            ent.setSnombre(dto.getSnombre());
+            ent.setAppaterno(dto.getAppaterno());
+            ent.setApmaterno(dto.getApmaterno());
+            ent.setEmail(dto.getEmail());
+            ent.setFono(dto.getFono());
 
-            pio.setFechaNacimiento(dto.getFechaNacimiento());
-            pio.setFechaCreacion(new Date());
-            pio.setFechaActualizacion(new Date());
+            ent.setFechaNacimiento(dto.getFechaNacimiento());
+            ent.setFechaCreacion(new Date());
+            ent.setFechaActualizacion(new Date());
 
             //Mapear direcciones:
             if (dto.getDirecciones() != null) {
                 dto.getDirecciones().forEach(direccionDTO -> {
                     Direccion direccionEntity = direccionInputMapper.toEntity(direccionDTO);
 
-                    pio.addDireccion(direccionEntity);
-                    if (pio.getDirecciones() != null && pio.getDirecciones().size() == 1) {
-                        pio.getDirecciones().getFirst().setEsDefault(true);
+                    ent.addDireccion(direccionEntity);
+                    if (ent.getDirecciones() != null && ent.getDirecciones().size() == 1) {
+                        ent.getDirecciones().getFirst().setEsDefault(true);
                     }
                 });
             }
-            return pio;
+            return ent;
         }
         return null;
     }

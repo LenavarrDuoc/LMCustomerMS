@@ -9,26 +9,26 @@ import java.util.Date;
 @Component
 public class ClienteUpdateMapper {
 
-    public Cliente toEntity(Cliente pio, ClienteUpdateDTO dto){
-        //pio = Persistence Instance Object.
+    public Cliente toEntity(Cliente ent, ClienteUpdateDTO dto){
+        //ent = entidad de Persistencia.
 
         if (dto != null){
 
 
-            pio.setNumrun(dto.getNumrun());
-            pio.setDvrun(dto.getDvrun());
-            pio.setPnombre(dto.getPnombre());
-            pio.setSnombre(dto.getSnombre());
-            pio.setAppaterno(dto.getAppaterno());
-            pio.setApmaterno(dto.getApmaterno());
-            pio.setEmail(dto.getEmail());
-            pio.setFono(dto.getFono());
+            ent.setNumrun(dto.getNumrun());
+            ent.setDvrun(dto.getDvrun());
+            ent.setPnombre(dto.getPnombre());
+            ent.setSnombre(dto.getSnombre());
+            ent.setAppaterno(dto.getAppaterno());
+            ent.setApmaterno(dto.getApmaterno());
+            ent.setEmail(dto.getEmail());
+            ent.setFono(dto.getFono());
             /*TODO:Agregar condición que determine si existe o no dirección a actualizar, de no ser null.
-            pio.addDireccion(dto.getDireccion()); */
-            pio.setFechaNacimiento(dto.getFechaNacimiento());
-            pio.setFechaActualizacion(new Date());
+            ent.addDireccion(dto.getDireccion()); */
+            ent.setFechaNacimiento(dto.getFechaNacimiento());
+            ent.setFechaActualizacion(new Date());
 
-            return pio;
+            return ent;
         }
         return null;
     }

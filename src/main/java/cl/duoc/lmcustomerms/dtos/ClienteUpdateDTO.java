@@ -43,7 +43,7 @@ public class ClienteUpdateDTO {
     @Length(message = "Debe incluir símbolo '+', código de país y 9 dìgitos,.", min = 11, max = 11)
     private String fono;
 
-    //Se destinará endpoind diferente para gestión de directorio de direcciones por usuario.
+    //TODO:Se destinará endpoind diferente para gestión de directorio de direcciones por usuario.
 //    @NotNull
 //    private Direccion direccion;
 

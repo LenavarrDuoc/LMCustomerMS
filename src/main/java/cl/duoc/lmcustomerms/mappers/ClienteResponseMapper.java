@@ -13,23 +13,23 @@ public class ClienteResponseMapper {
         this.direccionResponseMapper = direccionResponseMapper;
     }
 
-    public ClienteResponseDTO toDto (Cliente objAux){
-        if (objAux != null){
+    public ClienteResponseDTO toDto (Cliente ent){
+        if (ent != null){
             ClienteResponseDTO dto = new ClienteResponseDTO();
 
 
-            dto.setId(objAux.getId());
-            dto.setRun(objAux.getNumrun().toString() + '-' + objAux.getDvrun());
-            dto.setNombre(objAux.getPnombre() + ' ' + objAux.getAppaterno());
-            dto.setEmail(objAux.getEmail());
-            dto.setFono(objAux.getFono());
-            dto.setFechaNacimiento(objAux.getFechaNacimiento());
-            dto.setFechaIngreso(objAux.getFechaCreacion());
-            dto.setFechaUltimaActualizacion(objAux.getFechaActualizacion());
+            dto.setId(ent.getId());
+            dto.setRun(ent.getNumrun().toString() + '-' + ent.getDvrun());
+            dto.setNombre(ent.getPnombre() + ' ' + ent.getAppaterno());
+            dto.setEmail(ent.getEmail());
+            dto.setFono(ent.getFono());
+            dto.setFechaNacimiento(ent.getFechaNacimiento());
+            dto.setFechaIngreso(ent.getFechaCreacion());
+            dto.setFechaUltimaActualizacion(ent.getFechaActualizacion());
 
             //Mapeo de direcciones DTO:
-            if (objAux.getDirecciones() != null){
-                dto.setDirecciones(objAux.getDirecciones().stream().map(direccionResponseMapper::toDto).toList());
+            if (ent.getDirecciones() != null){
+                dto.setDirecciones(ent.getDirecciones().stream().map(direccionResponseMapper::toDto).toList());
             }
 
             return dto;
