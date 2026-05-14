@@ -58,6 +58,20 @@ public class ClienteRESTController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/exists-by-id/{id}")
+    public ResponseEntity<Boolean> existsById(@PathVariable Long id) {
+        String logMsgRequest = "Recibiendo solicitud para verificar existencia de cliente con ID: " + id + ".";
+        String logMsg = "Solicitud para verificar existencia de cliente con ID: " + id + ".";
+        logger.info(logMsgRequest);
+        if (clienteService.existsById(id)) {
+            logger.info(logMsg + " => encontrado.");
+            return ResponseEntity.ok(true);
+        }
+        logger.info(logMsg + " => no encontrado.");
+        return ResponseEntity.ok(false);
+    }
+
+
     @GetMapping("/by-pnombre/{pnombre}")
     public ResponseEntity<List<ClienteResponseDTO>> findAllByPnombre(@PathVariable String pnombre){
         String logMsgRequest = "Recibiendo solicitud para buscar listado de clientes coincidentes con primer calle: " + pnombre + ".";

@@ -60,6 +60,11 @@ public class ClienteService {
         return clienteRepository.findAll().stream().map(clienteResponseMapper::toDto).toList();
     }
 
+    @Transactional
+    public Boolean existsById(Long id){
+        return clienteRepository.existsById(id);
+    }
+
     @Transactional(readOnly = true)
     public ClienteOrderResponseDTO findById(Long id){
         return clienteOrderResponseMapper.toDto(clienteRepository.findById(id).orElseThrow(() -> new IdNoExisteException("ID de cliente no existe."))) ;
