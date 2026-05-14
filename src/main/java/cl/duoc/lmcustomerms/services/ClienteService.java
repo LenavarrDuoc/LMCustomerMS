@@ -40,16 +40,16 @@ public class ClienteService {
 
     //CREATE:
     @Transactional
-    public ClienteResponseDTO save(ClienteInputDTO ent){
-        if (clienteRepository.existsByNumrun(ent.getNumrun())){
+    public ClienteResponseDTO save(ClienteInputDTO dto){
+        if (clienteRepository.existsByNumrun(dto.getNumrun())){
             throw new ClienteNumrunExisteException("R.U.N. de cliente ya existe.");
-        } else if (clienteRepository.existsByEmail(ent.getEmail())){
+        } else if (clienteRepository.existsByEmail(dto.getEmail())){
             throw new ClienteEmailExisteException("Correo electrónico de cliente ya existe.");
         }
 
         //permite dejar la primera dirección ingresada como la por defecto para el cliente.
 
-        return clienteResponseMapper.toDto(clienteRepository.save(clienteInputMapper.toEntity(ent)));
+        return clienteResponseMapper.toDto(clienteRepository.save(clienteInputMapper.toEntity(dto)));
 
     }
 
