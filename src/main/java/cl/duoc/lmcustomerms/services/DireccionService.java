@@ -47,6 +47,10 @@ public class DireccionService {
         return direccionRepository.findAll().stream().map(direccionResponseMapper::toDto).toList();
     }
 
+    public List<DireccionResponseDTO> findAllDirecciones(Long id){
+        return direccionRepository.findAllByClienteId(id).stream().map(direccionResponseMapper::toDto).toList();
+    }
+
     public DireccionResponseDTO findById(Long id){
         return direccionResponseMapper.toDto(direccionRepository.findById(id).orElse(null));
     }

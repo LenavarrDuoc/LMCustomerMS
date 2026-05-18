@@ -55,7 +55,7 @@ public class DireccionRESTController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<DireccionResponseDTO> findById(@PathVariable Long id){
+    public ResponseEntity<DireccionResponseDTO> findDireccionById(@PathVariable Long id){
         String logMsgRequest = "Recibiendo solicitud para buscar direccion por ID: " + id + ".";
         String logMsg = "Solicitud para buscar direccion por ID: " + id + ".";
         logger.info(logMsgRequest);

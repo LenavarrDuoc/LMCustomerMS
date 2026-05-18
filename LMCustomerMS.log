@@ -1,54 +1,53 @@
-2026-05-12 00:01:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:06:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:11:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:16:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:21:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:26:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:31:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:36:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:41:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:46:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:51:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 00:56:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:01:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:06:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:11:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:16:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:21:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:26:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:31:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:36:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:41:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:46:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:51:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 01:56:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:01:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:06:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:11:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:16:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:21:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:26:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:31:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:36:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:41:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:46:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:51:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 02:56:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 03:01:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 03:06:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 03:11:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 03:16:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 03:21:26 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-12 03:24:19 INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Unregistering application LMCUSTOMERMS with eureka with status DOWN
-2026-05-12 03:24:19 INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1778570659862, current=DOWN, previous=UP]
-2026-05-12 03:24:19 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:71c133fb2c50901809725b808d7ed326: registering service...
-2026-05-12 03:24:19 INFO  org.springframework.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-12 03:24:19 INFO  org.springframework.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-05-12 03:24:19 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:71c133fb2c50901809725b808d7ed326 - registration status: 204
-2026-05-12 03:24:19 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-12 03:24:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-12 03:24:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-05-12 03:24:19 INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2026-05-12 03:24:22 INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
-2026-05-12 03:24:22 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:71c133fb2c50901809725b808d7ed326 - deregister  status: 200
-2026-05-12 03:24:22 INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-05-18 00:04:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:09:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:14:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:19:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:24:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:29:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:34:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:39:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:44:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:48:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 00:48:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 00:48:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 00:48:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 00:48:26 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
+2026-05-18 00:48:26 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
+2026-05-18 00:49:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:54:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 00:59:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:04:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:09:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:14:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:19:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:24:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:29:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:30:30 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 01:30:30 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 01:30:30 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 01:30:30 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 01:30:30 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
+2026-05-18 01:30:30 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
+2026-05-18 01:34:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:39:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:40:29 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 01:40:29 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 01:40:29 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 01:40:29 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 01:40:29 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
+2026-05-18 01:40:29 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
+2026-05-18 01:44:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:47:54 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 01:47:54 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 01:47:54 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 01:47:54 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 01:47:54 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
+2026-05-18 01:47:55 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
+2026-05-18 01:49:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-18 01:53:19 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 01:53:19 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 01:53:19 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-18 01:53:19 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-18 01:53:19 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
+2026-05-18 01:53:19 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
+2026-05-18 01:54:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
