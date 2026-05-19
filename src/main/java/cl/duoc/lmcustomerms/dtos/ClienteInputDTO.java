@@ -40,7 +40,7 @@ public class ClienteInputDTO {
     private String email;
 
     @NotBlank
-    @Length(message = "Debe incluir símbolo '+', código de país y 9 dìgitos,.", min = 11, max = 11)
+    @Length(message = "Debe incluir símbolo '+', código de país y 9 dìgitos,.", min = 12, max = 12)
     private String fono;
 
     @NotNull(message = "Debe ingresar una dirección.")

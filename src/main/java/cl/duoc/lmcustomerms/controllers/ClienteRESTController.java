@@ -147,12 +147,12 @@ public class ClienteRESTController {
 
     //UPDATE:
     @PutMapping("/{id}")
-    public ResponseEntity<ClienteResponseDTO> update(@Valid @RequestBody ClienteUpdateDTO objAux, @PathVariable Long id){
+    public ResponseEntity<ClienteResponseDTO> update(@Valid @RequestBody ClienteUpdateDTO dto, @PathVariable Long id){
         String logMsgRequest = "Recibiendo solicitud para actualizar cliente con ID: " + id + ".";
         String logMsg = "Solicitud para actualizar cliente con ID: " + id + ".";
         logger.info(logMsgRequest);
-        objAux.setId(id);
-        ClienteResponseDTO updated = clienteService.update(objAux);
+        dto.setId(id);
+        ClienteResponseDTO updated = clienteService.update(dto);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(updated.getId()).toUri();
         //de componentes de constructor URI // de la actual request //ruta de id // sacar la id del obj creado // transformar a URI.
         logger.info(logMsg + " => actualizado.");

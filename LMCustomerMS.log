@@ -1,53 +1,165 @@
-2026-05-18 00:04:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:09:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:14:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:19:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:24:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:29:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:34:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:39:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:44:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:48:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 00:48:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 00:48:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 00:48:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 00:48:26 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
-2026-05-18 00:48:26 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
-2026-05-18 00:49:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:54:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 00:59:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:04:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:09:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:14:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:19:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:24:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:29:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:30:30 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 01:30:30 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 01:30:30 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 01:30:30 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 01:30:30 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
-2026-05-18 01:30:30 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
-2026-05-18 01:34:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:39:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:40:29 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 01:40:29 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 01:40:29 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 01:40:29 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 01:40:29 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
-2026-05-18 01:40:29 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
-2026-05-18 01:44:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:47:54 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 01:47:54 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 01:47:54 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 01:47:54 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 01:47:54 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
-2026-05-18 01:47:55 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
-2026-05-18 01:49:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-18 01:53:19 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 01:53:19 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 01:53:19 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-18 01:53:19 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-18 01:53:19 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
-2026-05-18 01:53:19 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:O'Higgins45RancaguaRancaguaLibertador General Bernardo O'Higgins.
-2026-05-18 01:54:20 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:17:31 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Starting LmCustomerMsApplication using Java 26.0.1 with PID 82543 (/home/leonardo-navarro/Documentos/Ingenieria_Informatica/2026/sem_3/DSF1/Proyecto_evaluacion_sumativa/LibreriaMarket/LMCustomerMS/target/classes started by leonardo-navarro in /home/leonardo-navarro/Documentos/Ingenieria_Informatica/2026/sem_3/DSF1/Proyecto_evaluacion_sumativa/LibreriaMarket/LMCustomerMS)
+2026-05-19 12:17:31 DEBUG cl.duoc.lmcustomerms.LmCustomerMsApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-19 12:17:31 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-19 12:17:31 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-19 12:17:31 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 2 JPA repository interfaces.
+2026-05-19 12:17:32 INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=20b4fe8d-d27d-3353-a5e1-afee169acfde
+2026-05-19 12:17:32 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2026-05-19 12:17:32 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-19 12:17:32 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-19 12:17:32 INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1230 ms
+2026-05-19 12:17:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-19 12:17:32 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbe486c
+2026-05-19 12:17:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-19 12:17:32 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/cliente_db (MySQL 5.5)
+2026-05-19 12:17:32 INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.009s)
+2026-05-19 12:17:32 WARN  org.flywaydb.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
+2026-05-19 12:17:32 INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `cliente_db`: << Empty Schema >>
+2026-05-19 12:17:32 INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `cliente_db` is up to date. No migration necessary.
+2026-05-19 12:17:33 INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-19 12:17:33 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-19 12:17:33 INFO  o.s.d.jpa.repository.query.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-19 12:17:34 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-19 12:17:34 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-05-19 12:17:35 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-05-19 12:17:35 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-19 12:17:35 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat started on port 44837 (http) with context path '/'
+2026-05-19 12:17:35 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 44837
+2026-05-19 12:17:35 INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-05-19 12:17:35 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-05-19 12:17:35 INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779207455418 with initial instances count: 0
+2026-05-19 12:17:35 INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application LMCUSTOMERMS with eureka with status UP
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779207455421, current=UP, previous=STARTING]
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933: registering service...
+2026-05-19 12:17:35 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Started LmCustomerMsApplication in 4.575 seconds (process running for 5.043)
+2026-05-19 12:17:35 WARN  org.springdoc.core.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-05-19 12:17:35 WARN  org.springdoc.core.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933 - registration status: 204
+2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-19 12:22:35 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:27:35 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:31:25 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-19 12:31:25 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-19 12:31:25 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-05-19 12:32:35 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:33:16 INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Unregistering application LMCUSTOMERMS with eureka with status DOWN
+2026-05-19 12:33:16 INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779208396643, current=DOWN, previous=UP]
+2026-05-19 12:33:16 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933: registering service...
+2026-05-19 12:33:16 INFO  org.springframework.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-19 12:33:16 INFO  org.springframework.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-19 12:33:16 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933 - registration status: 204
+2026-05-19 12:33:16 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-19 12:33:16 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-19 12:33:16 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-19 12:33:16 INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2026-05-19 12:33:19 INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+2026-05-19 12:33:19 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933 - deregister  status: 200
+2026-05-19 12:33:19 INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2026-05-19 12:33:22 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Starting LmCustomerMsApplication using Java 26.0.1 with PID 87358 (/home/leonardo-navarro/Documentos/Ingenieria_Informatica/2026/sem_3/DSF1/Proyecto_evaluacion_sumativa/LibreriaMarket/LMCustomerMS/target/classes started by leonardo-navarro in /home/leonardo-navarro/Documentos/Ingenieria_Informatica/2026/sem_3/DSF1/Proyecto_evaluacion_sumativa/LibreriaMarket/LMCustomerMS)
+2026-05-19 12:33:22 DEBUG cl.duoc.lmcustomerms.LmCustomerMsApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-19 12:33:22 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-19 12:33:22 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-19 12:33:22 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces.
+2026-05-19 12:33:23 INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=20b4fe8d-d27d-3353-a5e1-afee169acfde
+2026-05-19 12:33:23 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2026-05-19 12:33:23 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-19 12:33:23 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-19 12:33:23 INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1033 ms
+2026-05-19 12:33:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-19 12:33:23 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@661db63e
+2026-05-19 12:33:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-19 12:33:23 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/cliente_db (MySQL 5.5)
+2026-05-19 12:33:23 INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.009s)
+2026-05-19 12:33:23 WARN  org.flywaydb.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
+2026-05-19 12:33:23 INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `cliente_db`: << Empty Schema >>
+2026-05-19 12:33:23 INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `cliente_db` is up to date. No migration necessary.
+2026-05-19 12:33:24 INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-19 12:33:24 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-19 12:33:24 INFO  o.s.d.jpa.repository.query.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-19 12:33:25 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-19 12:33:25 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-05-19 12:33:25 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-05-19 12:33:25 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-05-19 12:33:25 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat started on port 40343 (http) with context path '/'
+2026-05-19 12:33:25 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 40343
+2026-05-19 12:33:25 INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-05-19 12:33:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-05-19 12:33:26 INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779208406131 with initial instances count: 7
+2026-05-19 12:33:26 INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application LMCUSTOMERMS with eureka with status UP
+2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779208406134, current=UP, previous=STARTING]
+2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:ceb8cc8f479bab62092aeccbf70334d5: registering service...
+2026-05-19 12:33:26 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Started LmCustomerMsApplication in 4.108 seconds (process running for 4.61)
+2026-05-19 12:33:26 WARN  org.springdoc.core.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-05-19 12:33:26 WARN  org.springdoc.core.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:ceb8cc8f479bab62092aeccbf70334d5 - registration status: 204
+2026-05-19 12:34:22 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-19 12:34:22 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-19 12:34:22 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-19 12:34:22 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para crear/guardar cliente.
+2026-05-19 12:34:22 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para crear/guardar cliente.=> creado con ID: 1, R.U.N.: 12345678-9, correo: juan.perez@duoc.cl, fono: +56912345675.
+2026-05-19 12:34:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para crear/guardar cliente.
+2026-05-19 12:34:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para crear/guardar cliente.=> creado con ID: 2, R.U.N.: 18765432-1, correo: ma.lopezg@duoc.cl, fono: +56987654328.
+2026-05-19 12:34:48 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para verificar existencia de cliente con ID: 1.
+2026-05-19 12:34:48 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para verificar existencia de cliente con ID: 1. => encontrado.
+2026-05-19 12:34:48 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-19 12:34:48 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-19 12:34:59 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-19 12:34:59 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-19 12:34:59 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
+2026-05-19 12:34:59 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
+2026-05-19 12:34:59 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
+2026-05-19 12:34:59 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:Paseo Ahumada123405SantiagoSantiagoMetropolitana.
+2026-05-19 12:38:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:40:56 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
+2026-05-19 12:40:56 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:Paseo Ahumada123405SantiagoSantiagoMetropolitana.
+2026-05-19 12:43:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:43:32 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 3.
+2026-05-19 12:43:32 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 3. => encontrado Direccion:Calle Los Alerces105012La FloridaLa FloridaMetropolitana.
+2026-05-19 12:43:49 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 1.
+2026-05-19 12:43:49 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 1. => encontrado Direccion:Avenida Siempre Viva742Puente AltoPuente AltoMetropolitana.
+2026-05-19 12:48:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:53:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 12:58:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 13:03:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 13:08:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 13:13:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 13:18:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 13:23:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 13:28:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 13:33:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 13:38:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 14:24:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 14:29:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 14:34:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 14:39:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 14:44:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-05-19 14:49:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
