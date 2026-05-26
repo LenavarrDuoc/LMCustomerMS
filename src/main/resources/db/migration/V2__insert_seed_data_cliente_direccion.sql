@@ -13,18 +13,50 @@ INSERT INTO cliente (
       );
 
 -- 2. Insertar Datos de Direcciones vinculadas a los Clientes
+-- ====================================================================
+-- Versión Corregida para calzar con la estructura real de direccion
+-- ====================================================================
+
 INSERT INTO direccion (
-    numero, nro_depto, calle, comuna, region, es_Default, fk_cliente_id
+    direccion_id,
+    es_default,
+    nro_depto,
+    numero,
+    fk_cliente_id,
+    calle,
+    comuna,
+    region
 ) VALUES
--- Dirección para el Cliente 1 (Carlos)
+-- Dirección para el Cliente 1 (Carlos) - ID de dirección: 1
 (
-    1420, NULL, 'Avenida Providencia', 'Providencia', 'Región Metropolitana', TRUE, 1
+    1,
+    TRUE,
+    NULL,
+    1420,
+    1,
+    'Avenida Providencia',
+    'Providencia',
+    'Región Metropolitana'
 ),
--- Primera dirección para el Cliente 2 (Ana - Casa)
+-- Primera dirección para el Cliente 2 (Ana - Casa) - ID de dirección: 2
 (
-    543, NULL, 'Calle Los Aromos', 'Viña del Mar', 'Región de Valparaíso', TRUE, 2
+    2,
+    TRUE,
+    NULL,
+    543,
+    2,
+    'Calle Los Aromos',
+    'Viña del Mar',
+    'Región de Valparaíso'
 ),
--- Segunda dirección para el Cliente 2 (Ana - Departamento Trabajo)
+-- Segunda dirección para el Cliente 2 (Ana - Trabajo) - ID de dirección: 3
 (
-    90, 402, 'Paseo Ahumada', 'Santiago', 'Región Metropolitana', FALSE, 2
+    3,
+    FALSE,
+    402,
+    90,
+    2,
+    'Paseo Ahumada',
+    'Santiago',
+    'Región Metropolitana'
 );
