@@ -1,165 +1,192 @@
-2026-05-19 12:17:31 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Starting LmCustomerMsApplication using Java 26.0.1 with PID 82543 (/home/leonardo-navarro/Documentos/Ingenieria_Informatica/2026/sem_3/DSF1/Proyecto_evaluacion_sumativa/LibreriaMarket/LMCustomerMS/target/classes started by leonardo-navarro in /home/leonardo-navarro/Documentos/Ingenieria_Informatica/2026/sem_3/DSF1/Proyecto_evaluacion_sumativa/LibreriaMarket/LMCustomerMS)
-2026-05-19 12:17:31 DEBUG cl.duoc.lmcustomerms.LmCustomerMsApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-05-19 12:17:31 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - No active profile set, falling back to 1 default profile: "default"
-2026-05-19 12:17:31 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-19 12:17:31 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 2 JPA repository interfaces.
-2026-05-19 12:17:32 INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=20b4fe8d-d27d-3353-a5e1-afee169acfde
-2026-05-19 12:17:32 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
-2026-05-19 12:17:32 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-19 12:17:32 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-05-19 12:17:32 INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1230 ms
-2026-05-19 12:17:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-19 12:17:32 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbe486c
-2026-05-19 12:17:32 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-19 12:17:32 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/cliente_db (MySQL 5.5)
-2026-05-19 12:17:32 INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.009s)
-2026-05-19 12:17:32 WARN  org.flywaydb.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
-2026-05-19 12:17:32 INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `cliente_db`: << Empty Schema >>
-2026-05-19 12:17:32 INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `cliente_db` is up to date. No migration necessary.
-2026-05-19 12:17:33 INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-19 12:17:33 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-19 12:17:33 INFO  o.s.d.jpa.repository.query.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-19 12:17:34 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-19 12:17:34 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2026-05-19 12:17:35 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
-2026-05-19 12:17:35 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-05-19 12:17:35 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat started on port 44837 (http) with context path '/'
-2026-05-19 12:17:35 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 44837
-2026-05-19 12:17:35 INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-05-19 12:17:35 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-05-19 12:17:35 INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779207455418 with initial instances count: 0
-2026-05-19 12:17:35 INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application LMCUSTOMERMS with eureka with status UP
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779207455421, current=UP, previous=STARTING]
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933: registering service...
-2026-05-19 12:17:35 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Started LmCustomerMsApplication in 4.575 seconds (process running for 5.043)
-2026-05-19 12:17:35 WARN  org.springdoc.core.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-05-19 12:17:35 WARN  org.springdoc.core.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-05-19 12:17:35 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933 - registration status: 204
-2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
-2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-19 12:18:05 INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-19 12:22:35 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:27:35 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:31:25 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-19 12:31:25 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-19 12:31:25 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2026-05-19 12:32:35 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:33:16 INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Unregistering application LMCUSTOMERMS with eureka with status DOWN
-2026-05-19 12:33:16 INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779208396643, current=DOWN, previous=UP]
-2026-05-19 12:33:16 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933: registering service...
-2026-05-19 12:33:16 INFO  org.springframework.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-05-19 12:33:16 INFO  org.springframework.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-05-19 12:33:16 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933 - registration status: 204
-2026-05-19 12:33:16 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-05-19 12:33:16 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-05-19 12:33:16 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-05-19 12:33:16 INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2026-05-19 12:33:19 INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
-2026-05-19 12:33:19 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:a5ac9bae290aed8e253d36bbe0080933 - deregister  status: 200
-2026-05-19 12:33:19 INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2026-05-19 12:33:22 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Starting LmCustomerMsApplication using Java 26.0.1 with PID 87358 (/home/leonardo-navarro/Documentos/Ingenieria_Informatica/2026/sem_3/DSF1/Proyecto_evaluacion_sumativa/LibreriaMarket/LMCustomerMS/target/classes started by leonardo-navarro in /home/leonardo-navarro/Documentos/Ingenieria_Informatica/2026/sem_3/DSF1/Proyecto_evaluacion_sumativa/LibreriaMarket/LMCustomerMS)
-2026-05-19 12:33:22 DEBUG cl.duoc.lmcustomerms.LmCustomerMsApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-05-19 12:33:22 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - No active profile set, falling back to 1 default profile: "default"
-2026-05-19 12:33:22 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-19 12:33:22 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces.
-2026-05-19 12:33:23 INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=20b4fe8d-d27d-3353-a5e1-afee169acfde
-2026-05-19 12:33:23 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
-2026-05-19 12:33:23 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-19 12:33:23 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-05-19 12:33:23 INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1033 ms
-2026-05-19 12:33:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-05-19 12:33:23 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@661db63e
-2026-05-19 12:33:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-05-19 12:33:23 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/cliente_db (MySQL 5.5)
-2026-05-19 12:33:23 INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 0 migrations (execution time 00:00.009s)
-2026-05-19 12:33:23 WARN  org.flywaydb.core.internal.command.DbValidate - No migrations found. Are your locations set up correctly?
-2026-05-19 12:33:23 INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `cliente_db`: << Empty Schema >>
-2026-05-19 12:33:23 INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `cliente_db` is up to date. No migration necessary.
-2026-05-19 12:33:24 INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-19 12:33:24 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-19 12:33:24 INFO  o.s.d.jpa.repository.query.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-05-19 12:33:25 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-19 12:33:25 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2026-05-19 12:33:25 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
-2026-05-19 12:33:25 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-05-19 12:33:25 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat started on port 40343 (http) with context path '/'
-2026-05-19 12:33:25 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 40343
-2026-05-19 12:33:25 INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2026-05-19 12:33:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
-2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
-2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
-2026-05-19 12:33:25 INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
-2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2026-05-19 12:33:26 INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1779208406131 with initial instances count: 7
-2026-05-19 12:33:26 INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application LMCUSTOMERMS with eureka with status UP
-2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1779208406134, current=UP, previous=STARTING]
-2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:ceb8cc8f479bab62092aeccbf70334d5: registering service...
-2026-05-19 12:33:26 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Started LmCustomerMsApplication in 4.108 seconds (process running for 4.61)
-2026-05-19 12:33:26 WARN  org.springdoc.core.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-05-19 12:33:26 WARN  org.springdoc.core.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-05-19 12:33:26 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:ceb8cc8f479bab62092aeccbf70334d5 - registration status: 204
-2026-05-19 12:34:22 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-19 12:34:22 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-19 12:34:22 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2026-05-19 12:34:22 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para crear/guardar cliente.
-2026-05-19 12:34:22 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para crear/guardar cliente.=> creado con ID: 1, R.U.N.: 12345678-9, correo: juan.perez@duoc.cl, fono: +56912345675.
-2026-05-19 12:34:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para crear/guardar cliente.
-2026-05-19 12:34:26 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para crear/guardar cliente.=> creado con ID: 2, R.U.N.: 18765432-1, correo: ma.lopezg@duoc.cl, fono: +56987654328.
-2026-05-19 12:34:48 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para verificar existencia de cliente con ID: 1.
-2026-05-19 12:34:48 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para verificar existencia de cliente con ID: 1. => encontrado.
-2026-05-19 12:34:48 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-19 12:34:48 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-19 12:34:59 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-19 12:34:59 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-19 12:34:59 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Recibiendo solicitud para buscar cliente por ID: 1.
-2026-05-19 12:34:59 INFO  c.d.lmcustomerms.controllers.ClienteRESTController - Solicitud para buscar cliente por ID: 1.=> encontrado.
-2026-05-19 12:34:59 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
-2026-05-19 12:34:59 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:Paseo Ahumada123405SantiagoSantiagoMetropolitana.
-2026-05-19 12:38:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:40:56 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 2.
-2026-05-19 12:40:56 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 2. => encontrado Direccion:Paseo Ahumada123405SantiagoSantiagoMetropolitana.
-2026-05-19 12:43:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:43:32 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 3.
-2026-05-19 12:43:32 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 3. => encontrado Direccion:Calle Los Alerces105012La FloridaLa FloridaMetropolitana.
-2026-05-19 12:43:49 INFO  c.d.l.controllers.DireccionRESTController - Recibiendo solicitud para buscar direccion por ID: 1.
-2026-05-19 12:43:49 INFO  c.d.l.controllers.DireccionRESTController - Solicitud para buscar direccion por ID: 1. => encontrado Direccion:Avenida Siempre Viva742Puente AltoPuente AltoMetropolitana.
-2026-05-19 12:48:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:53:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 12:58:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 13:03:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 13:08:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 13:13:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 13:18:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 13:23:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 13:28:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 13:33:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 13:38:25 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 14:24:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 14:29:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 14:34:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 14:39:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 14:44:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2026-05-19 14:49:21 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 00:02:03 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 01:32:56 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Starting LmCustomerMsApplication using Java 26.0.1 with PID 15784 (C:\Users\leo_b\Documents\Ing_Informatica\Sem_3\DFS1\LibreriaMarket\LMCustomerMS\target\classes started by leo_b in C:\Users\leo_b\Documents\Ing_Informatica\Sem_3\DFS1\LibreriaMarket\LMCustomerMS)
+2026-06-05 01:32:56 DEBUG cl.duoc.lmcustomerms.LmCustomerMsApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-05 01:32:56 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-05 01:32:58 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-05 01:32:58 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 173 ms. Found 2 JPA repository interfaces.
+2026-06-05 01:32:58 INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=6734f90d-01d9-36dd-ab6a-5bdeaec11a12
+2026-06-05 01:32:59 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2026-06-05 01:32:59 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-05 01:32:59 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-05 01:32:59 INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2727 ms
+2026-06-05 01:32:59 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-05 01:33:00 WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08S01
+Error Code : 0
+Message    : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+2026-06-05 01:33:00 INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2026-06-05 01:33:00 INFO  o.s.b.a.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-05 01:33:00 ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08S01
+Error Code : 0
+Message    : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at cl.duoc.lmcustomerms.LmCustomerMsApplication.main(LmCustomerMsApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08S01
+Error Code : 0
+Message    : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309)
+	... 10 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08S01
+Error Code : 0
+Message    : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:186)
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	... 17 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:840)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65)
+	... 23 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:79)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:142)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:964)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	... 34 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:642)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:548)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:599)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:668)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:144)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:53)
+	... 37 common frames omitted
+2026-06-05 01:33:42 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Starting LmCustomerMsApplication using Java 26.0.1 with PID 20388 (C:\Users\leo_b\Documents\Ing_Informatica\Sem_3\DFS1\LibreriaMarket\LMCustomerMS\target\classes started by leo_b in C:\Users\leo_b\Documents\Ing_Informatica\Sem_3\DFS1\LibreriaMarket\LMCustomerMS)
+2026-06-05 01:33:42 DEBUG cl.duoc.lmcustomerms.LmCustomerMsApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-05 01:33:42 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-05 01:33:43 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-05 01:33:43 INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 122 ms. Found 2 JPA repository interfaces.
+2026-06-05 01:33:44 INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=6734f90d-01d9-36dd-ab6a-5bdeaec11a12
+2026-06-05 01:33:44 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2026-06-05 01:33:44 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-05 01:33:44 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-05 01:33:44 INFO  o.s.b.w.c.servlet.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1903 ms
+2026-06-05 01:33:44 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-05 01:33:44 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@48632f69
+2026-06-05 01:33:44 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-05 01:33:45 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/cliente_db (MySQL 5.5)
+2026-06-05 01:33:45 INFO  org.flywaydb.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.063s)
+2026-06-05 01:33:45 INFO  org.flywaydb.core.internal.command.DbMigrate - Current version of schema `cliente_db`: 2
+2026-06-05 01:33:45 INFO  org.flywaydb.core.internal.command.DbMigrate - Schema `cliente_db` is up to date. No migration necessary.
+2026-06-05 01:33:45 INFO  o.s.o.j.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-05 01:33:47 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-05 01:33:47 INFO  o.s.d.jpa.repository.query.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-05 01:33:47 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-05 01:33:48 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-05 01:33:48 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestClient.
+2026-06-05 01:33:48 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-06-05 01:33:49 INFO  org.springframework.boot.tomcat.TomcatWebServer - Tomcat started on port 64668 (http) with context path '/'
+2026-06-05 01:33:49 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 64668
+2026-06-05 01:33:49 INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-06-05 01:33:49 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-06-05 01:33:49 INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1780637629639 with initial instances count: 0
+2026-06-05 01:33:49 INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application LMCUSTOMERMS with eureka with status UP
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1780637629644, current=UP, previous=STARTING]
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:8d6be6e72786fd180752fe5dbe44f388: registering service...
+2026-06-05 01:33:49 INFO  cl.duoc.lmcustomerms.LmCustomerMsApplication - Started LmCustomerMsApplication in 7.65 seconds (process running for 8.918)
+2026-06-05 01:33:49 INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_LMCUSTOMERMS/LMCustomerMS:8d6be6e72786fd180752fe5dbe44f388 - registration status: 204
+2026-06-05 01:34:19 INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-06-05 01:34:19 INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-06-05 01:34:19 INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-06-05 01:34:19 INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2026-06-05 01:34:19 INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-06-05 01:34:19 INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-06-05 01:34:19 INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-06-05 01:34:20 INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2026-06-05 01:38:49 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 01:43:49 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 01:48:49 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 01:52:03 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-05 01:52:03 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-05 01:52:03 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 262 ms
+2026-06-05 01:52:04 INFO  org.springdoc.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 813 ms
+2026-06-05 01:53:49 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 01:58:49 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 02:03:49 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-06-05 02:08:49 INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
