@@ -19,6 +19,7 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,16 +27,20 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 
 @RestController
-@RequestMapping("/api/v1/clientes")
-@Tag(name = "Clientes", description = "Gestión de clientes.")
+@RequestMapping("/api/v2/clientes")
+@Tag(name = "Clientes V2", description = "Gestión de clientes.")
 public class ClienteRESTControllerV2 {
 
     private static final Logger logger = LoggerFactory.getLogger(ClienteRESTControllerV2.class.getName());
 
-
+    //TODO: para pruebas unitarias, implementar @RequiredArgsConstructor, borrar anotación @Autowired de implementaciones que la tengan, y convertir a private final todas aquellas implementaciones.
     @Autowired
     private ClienteService clienteService;
 
@@ -67,6 +72,7 @@ public class ClienteRESTControllerV2 {
             )
     }
     )
+
     @PostMapping
     @Operation(summary = "Crear cliente.", description = "Guardar un registro de nuevo cliente.")
     public ResponseEntity<EntityModel<ClienteResponseDTO>> save(@Valid @RequestBody ClienteInputDTO dto){
@@ -89,7 +95,7 @@ public class ClienteRESTControllerV2 {
                     description = "Se han encontrado registros",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
+                            schema = @Schema(implementation = CollectionModel.class)
                     )
             ),
             @ApiResponse(
@@ -99,22 +105,22 @@ public class ClienteRESTControllerV2 {
             ),
             @ApiResponse(
                     responseCode = "204",
-                    description = "No se han encontrado registros.",
+                    description = "No contiene registros.",
                     content = @Content(schema = @Schema(hidden = true))
             )
     }
     )
     @GetMapping
     @Operation(summary = "Listar todos los clientes.", description = "Muestra todos los registros de clientes.")
-    public ResponseEntity<List<ClienteResponseDTO>> findAll(){
+    public ResponseEntity<CollectionModel<EntityModel<ClienteResponseDTO>>> findAll(){
         String logMsgRequest = "Recibiendo solicitud para buscar listado de clientes.";
         String logMsg = "Solicitud para buscar listado de clientes.";
         logger.info(logMsgRequest);
-        List<ClienteResponseDTO> listadoDTO = clienteService.findAll();
+        List<EntityModel<ClienteResponseDTO>> listadoDTO = clienteService.findAll().stream().map(dto -> clienteResponseModelAssembler.toModel(dto)).collect(Collectors.toList());
 
         if (!listadoDTO.isEmpty()){
             logger.info(logMsg + "=> encontrado(s) y enlistado(s).");
-            return ResponseEntity.ok(listadoDTO);
+            return ResponseEntity.ok(CollectionModel.of(listadoDTO, linkTo(methodOn(ClienteRESTControllerV2.class).findAll()).withSelfRel()));
         }
         logger.info(logMsg + "=> sin coincidencias (vacío).");
         return ResponseEntity.noContent().build();
@@ -163,7 +169,7 @@ public class ClienteRESTControllerV2 {
                     description = "Se han encontrado registros de clientes con coincidencia de Nombre ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
+                            schema = @Schema(implementation = CollectionModel.class)
                     )
             ),
             @ApiResponse(
@@ -179,16 +185,17 @@ public class ClienteRESTControllerV2 {
     }
     )
     @GetMapping("/by-pnombre/{pnombre}")
-    @Operation(summary = "Encontrar clientes por nombre", description = "Trae el registro peteneciente a todos los clientes coincidentes con nombre ingresado.")
-    public ResponseEntity<List<ClienteResponseDTO>> findAllByPnombre(@Parameter(description = "Nombre de cliente(s) a buscar", required = true) @PathVariable String pnombre){
-        String logMsgRequest = "Recibiendo solicitud para buscar listado de clientes coincidentes con primer calle: " + pnombre + ".";
-        String logMsg = "Solicitud para buscar listado de clientes coincidentes con primer calle: " + pnombre + ".";
+    @Operation(summary = "Encontrar clientes por nombre", description = "Trae el registro peteneciente a todos los clientes coincidentes con primer nombre ingresado.")
+    public ResponseEntity<CollectionModel<EntityModel<ClienteResponseDTO>>> findAllByPnombre(@Parameter(description = "Primer nombre de cliente(s) a buscar", required = true) @PathVariable String pnombre){
+        String logMsgRequest = "Recibiendo solicitud para buscar listado de clientes coincidentes con primer nombre: " + pnombre + ".";
+        String logMsg = "Solicitud para buscar listado de clientes coincidentes con primer nombre: " + pnombre + ".";
         logger.info(logMsgRequest);
-        List<ClienteResponseDTO> listadoDTO = clienteService.findAllByPnombre(pnombre);
+        List<EntityModel<ClienteResponseDTO>> listadoDTO = clienteService.findAllByPnombre(pnombre).stream().map(dto -> clienteResponseModelAssembler.toModel(dto)).collect(Collectors.toList());
 
         if (!listadoDTO.isEmpty()){
             logger.info(logMsg + "=> encontrado(s) y enlistado(s).");
-            return ResponseEntity.ok(listadoDTO);
+
+            return ResponseEntity.ok(CollectionModel.of(listadoDTO, linkTo(methodOn(ClienteRESTControllerV2.class).findAllByPnombre(pnombre)).withSelfRel()));
         }
         logger.info(logMsg + "=> sin coincidencias (vacío).");
         return ResponseEntity.noContent().build();
@@ -200,7 +207,7 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha encontrado registro perteneciente a cliente según ID ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteOrderResponseDTO.class)
+                            schema = @Schema(implementation = EntityModel.class)
                     )
             ),
             @ApiResponse(
@@ -217,14 +224,14 @@ public class ClienteRESTControllerV2 {
     )
     @GetMapping("/{id}")
     @Operation(summary = "Encuentra cliente por ID", description = "Trae el registro perteneciente a un cliente según ID ingresado.")
-    public ResponseEntity<ClienteOrderResponseDTO> findById(@Parameter(description = "ID de cliente", required = true) @PathVariable Long id){
+    public ResponseEntity<EntityModel<ClienteOrderResponseDTO>> findById(@Parameter(description = "ID de cliente", required = true) @PathVariable Long id){
         String logMsgRequest = "Recibiendo solicitud para buscar cliente por ID: " + id + ".";
         String logMsg = "Solicitud para buscar cliente por ID: " + id + ".";
         logger.info(logMsgRequest);
         ClienteOrderResponseDTO dto = clienteService.findById(id);
         if (dto != null){
             logger.info(logMsg + "=> encontrado.");
-            return ResponseEntity.ok(dto);
+            return ResponseEntity.ok(clienteOrderResponseModelAssembler.toModel(dto));
         }
         logger.info(logMsg + "=> no encontrado.");
         return ResponseEntity.notFound().build();
@@ -237,7 +244,7 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha encontrado registro perteneciente a cliente según número de R.U.N. ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
+                            schema = @Schema(implementation = EntityModel.class)
                     )
             ),
             @ApiResponse(
@@ -254,14 +261,14 @@ public class ClienteRESTControllerV2 {
     )
     @GetMapping("/by-numrun/{numrun}")
     @Operation(summary = "Encuentra cliente por Número de R.U.N.", description = "Trae el registro perteneciente a cliente según Número de R.U.N. ingresado.")
-    public ResponseEntity<ClienteResponseDTO> findByNumRun(@Parameter(description = "Número de R.U.N. de cliente", required = true) @PathVariable Integer numrun){
+    public ResponseEntity<EntityModel<ClienteResponseDTO>> findByNumRun(@Parameter(description = "Número de R.U.N. de cliente", required = true) @PathVariable Integer numrun){
         String logMsgRequest = "Recibiendo solicitud para buscar cliente por R.U.N.: " + numrun + ".";
         String logMsg = "Solicitud para buscar cliente por R.U.N.: " + numrun + ".";
         logger.info(logMsgRequest);
         ClienteResponseDTO dto = clienteService.findByNumRun(numrun);
         if (dto != null){
             logger.info(logMsg + "=> encontrado con ID:{}", dto.getId() + ".");
-            return ResponseEntity.ok(dto);
+            return ResponseEntity.ok(clienteResponseModelAssembler.toModel(dto));
         }
         logger.info(logMsg + "=> no encontrado.");
         return ResponseEntity.notFound().build();
@@ -270,11 +277,11 @@ public class ClienteRESTControllerV2 {
 
     @ApiResponses( value = {
             @ApiResponse(
-                    responseCode = "20",
+                    responseCode = "200",
                     description = "Se ha encontrado registro perteneciente a cliente según email ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
+                            schema = @Schema(implementation = EntityModel.class)
                     )
             ),
             @ApiResponse(
@@ -291,14 +298,14 @@ public class ClienteRESTControllerV2 {
     )
     @GetMapping("/by-email/{email}")
     @Operation(summary = "Encuentra cliente por email.", description = "Trae registro perteneciente a cliente según email ingresado.")
-    public ResponseEntity<ClienteResponseDTO> findByEmail(@Parameter(description = "Email de cliente", required = true) @PathVariable String email){
+    public ResponseEntity<EntityModel<ClienteResponseDTO>> findByEmail(@Parameter(description = "Email de cliente", required = true) @PathVariable String email){
         String logMsgRequest = "Recibiendo solicitud para buscar cliente por correo electrónico: " + email + ".";
         String logMsg = "Solicitud para buscar cliente por correo electrónico: " + email + ".";
         logger.info(logMsgRequest);
         ClienteResponseDTO dto = clienteService.findByEmail(email);
         if (dto != null){
             logger.info(logMsg + "=> encontrado con ID:{}", dto.getId() + ".");
-            return ResponseEntity.ok(dto);
+            return ResponseEntity.ok(clienteResponseModelAssembler.toModel(dto));
         }
         logger.info(logMsg + "=> no encontrado.");
         return ResponseEntity.notFound().build();
@@ -311,7 +318,7 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha encontrado registro perteneciente a cliente según número telefónico ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
+                            schema = @Schema(implementation = EntityModel.class)
                     )
             ),
             @ApiResponse(
@@ -320,7 +327,7 @@ public class ClienteRESTControllerV2 {
                     content = @Content(schema = @Schema(hidden = true))
             ),
             @ApiResponse(
-                    responseCode = "409",
+                    responseCode = "404",
                     description = "No se ha encontrado registro perteneciente a cliente según número telefónico ingresado.",
                     content = @Content(schema = @Schema(hidden = true))
             )
@@ -328,14 +335,14 @@ public class ClienteRESTControllerV2 {
     )
     @GetMapping("/by-fono/{fono}")
     @Operation(summary = "Encuentra cliente por número telefónico", description = "Trae el registro pertenenciente a cliente según número telefónico ingresado.")
-    public ResponseEntity<ClienteResponseDTO> findByFono(@Parameter(description = "Número telefónico de cliente", required = true) @PathVariable String fono){
+    public ResponseEntity<EntityModel<ClienteResponseDTO>> findByFono(@Parameter(description = "Número telefónico de cliente", required = true) @PathVariable String fono){
         String logMsgRequest = "Recibiendo solicitud para buscar cliente por teléfono registrado: " + fono + ".";
         String logMsg = "Solicitud para buscar cliente por teléfono registrado: " + fono + ".";
         logger.info(logMsgRequest);
         ClienteResponseDTO dto = clienteService.findByFono(fono);
         if (dto != null){
             logger.info(logMsg + "=> encontrado con ID:{}", dto.getId() + ".");
-            return ResponseEntity.ok(dto);
+            return ResponseEntity.ok(clienteResponseModelAssembler.toModel(dto));
         }
         logger.info(logMsg + "=> no encontrado.");
         return ResponseEntity.notFound().build();
@@ -349,7 +356,7 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha actualizado registro",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
+                            schema = @Schema(implementation = EntityModel.class)
                     )
             ),
             @ApiResponse(
@@ -366,7 +373,7 @@ public class ClienteRESTControllerV2 {
     )
     @PutMapping("/{id}")
     @Operation(summary = "Actualizar cliente por ID", description = "Actualiza información de registro perteneciente a cliente según ID ingresado.")
-    public ResponseEntity<ClienteResponseDTO> update(@Parameter(description = "ID de cliente", required = true) @Valid @RequestBody ClienteUpdateDTO dto, @PathVariable Long id){
+    public ResponseEntity<EntityModel<ClienteResponseDTO>> update(@Parameter(description = "ID de cliente", required = true) @Valid @RequestBody ClienteUpdateDTO dto, @PathVariable Long id){
         String logMsgRequest = "Recibiendo solicitud para actualizar cliente con ID: " + id + ".";
         String logMsg = "Solicitud para actualizar cliente con ID: " + id + ".";
         logger.info(logMsgRequest);
@@ -375,7 +382,7 @@ public class ClienteRESTControllerV2 {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(updated.getId()).toUri();
         //de componentes de constructor URI // de la actual request //ruta de id // sacar la id del obj creado // transformar a URI.
         logger.info(logMsg + " => actualizado.");
-        return ResponseEntity.status(200).location(location).body(updated);
+        return ResponseEntity.ok().location(location).body(clienteResponseModelAssembler.toModel(updated));
         //devuelve el estado y la locación //devuelve el objeto creado
     }
 
@@ -384,12 +391,9 @@ public class ClienteRESTControllerV2 {
 
     @ApiResponses( value = {
             @ApiResponse(
-                    responseCode = "200",
+                    responseCode = "204",
                     description = "Se ha eliminado registro.",
-                    content = @Content(
-                            mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
-                    )
+                    content = @Content(schema = @Schema(hidden = true))
             ),
             @ApiResponse(
                     responseCode = "400",

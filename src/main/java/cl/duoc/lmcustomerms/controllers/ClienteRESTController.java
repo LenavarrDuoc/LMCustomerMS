@@ -170,10 +170,10 @@ public class ClienteRESTController {
     }
     )
     @GetMapping("/by-pnombre/{pnombre}")
-    @Operation(summary = "Encontrar clientes por nombre", description = "Trae el registro peteneciente a todos los clientes coincidentes con nombre ingresado.")
-    public ResponseEntity<List<ClienteResponseDTO>> findAllByPnombre(@Parameter(description = "Nombre de cliente(s) a buscar", required = true) @PathVariable String pnombre){
-        String logMsgRequest = "Recibiendo solicitud para buscar listado de clientes coincidentes con primer calle: " + pnombre + ".";
-        String logMsg = "Solicitud para buscar listado de clientes coincidentes con primer calle: " + pnombre + ".";
+    @Operation(summary = "Encontrar clientes por nombre", description = "Trae el registro peteneciente a todos los clientes coincidentes con primer nombre ingresado.")
+    public ResponseEntity<List<ClienteResponseDTO>> findAllByPnombre(@Parameter(description = "Primer nombre de cliente(s) a buscar", required = true) @PathVariable String pnombre){
+        String logMsgRequest = "Recibiendo solicitud para buscar listado de clientes coincidentes con primer nombre: " + pnombre + ".";
+        String logMsg = "Solicitud para buscar listado de clientes coincidentes con primer nombre: " + pnombre + ".";
         logger.info(logMsgRequest);
         List<ClienteResponseDTO> listadoDTO = clienteService.findAllByPnombre(pnombre);
 
@@ -366,7 +366,7 @@ public class ClienteRESTController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(updated.getId()).toUri();
         //de componentes de constructor URI // de la actual request //ruta de id // sacar la id del obj creado // transformar a URI.
         logger.info(logMsg + " => actualizado.");
-        return ResponseEntity.status(200).location(location).body(updated);
+        return ResponseEntity.ok().location(location).body(updated);
         //devuelve el estado y la locación //devuelve el objeto creado
     }
 
@@ -377,10 +377,7 @@ public class ClienteRESTController {
             @ApiResponse(
                     responseCode = "200",
                     description = "Se ha eliminado registro.",
-                    content = @Content(
-                            mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
-                    )
+                    content = @Content(schema = @Schema(hidden = true))
             ),
             @ApiResponse(
                     responseCode = "400",
