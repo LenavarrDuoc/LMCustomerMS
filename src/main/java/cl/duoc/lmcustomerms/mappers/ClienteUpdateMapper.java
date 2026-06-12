@@ -23,8 +23,6 @@ public class ClienteUpdateMapper {
             ent.setApmaterno(dto.getApmaterno());
             ent.setEmail(dto.getEmail());
             ent.setFono(dto.getFono());
-            /*TODO:Agregar condición que determine si existe o no dirección a actualizar, de no ser null.
-            ent.addDireccion(dto.getDireccion()); */
             ent.setFechaNacimiento(dto.getFechaNacimiento());
             ent.setFechaActualizacion(new Date());
 

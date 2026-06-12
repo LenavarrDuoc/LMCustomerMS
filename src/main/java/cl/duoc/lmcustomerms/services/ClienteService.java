@@ -107,7 +107,6 @@ public class ClienteService {
     @Transactional
     public ClienteResponseDTO update(ClienteUpdateDTO dto){
 
-        //TODO: Se debe arregllar: expone a la entidad Cliente directamente en Service cuando se podría procesar en el mapper.
         Cliente ent = clienteRepository.findById(dto.getId()).orElseThrow(() -> new IdNoExisteException("ID de cliente no existe."));
         return clienteResponseMapper.toDto(clienteRepository.save(clienteUpdateMapper.toEntity(ent, dto)));
     }
@@ -124,6 +123,4 @@ public class ClienteService {
         }
         return centinela;
     }
-    /*TODO: se debe agregar un crud parcial de gestión de direcciones para agregar, borrar, actualizar dirección de un client
-        y establecer la dirección por defecto del cliente, además de devolver dirección elegiada para consumo de venta/boleta */
 }
