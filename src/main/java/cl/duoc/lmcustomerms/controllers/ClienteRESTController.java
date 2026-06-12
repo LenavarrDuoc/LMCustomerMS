@@ -90,7 +90,7 @@ public class ClienteRESTController {
             ),
             @ApiResponse(
                     responseCode = "204",
-                    description = "No se han encontrado registros.",
+                    description = "No contiene registros.",
                     content = @Content(schema = @Schema(hidden = true))
             )
     }

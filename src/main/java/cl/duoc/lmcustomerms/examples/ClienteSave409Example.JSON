@@ -1,0 +1,6 @@
+{
+  "detail": "R.U.N. de cliente ya existe.",
+  "instance": "/api/v1/clientes",
+  "status": 409,
+  "title": "Conflicto de datos."
+}

@@ -1,6 +1,8 @@
 package cl.duoc.lmcustomerms.controllers;
 
-import cl.duoc.lmcustomerms.dtos.*;
+import cl.duoc.lmcustomerms.dtos.DireccionInputDTO;
+import cl.duoc.lmcustomerms.dtos.DireccionResponseDTO;
+import cl.duoc.lmcustomerms.dtos.DireccionUpdateDTO;
 import cl.duoc.lmcustomerms.services.DireccionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -21,11 +23,11 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/direcciones")
-@Tag(name = "Direcciones", description = "Gestión de direcciones de clientes.")
-public class DireccionRESTController {
+@RequestMapping("/api/v2/direcciones")
+@Tag(name = "Direcciones V2 ", description = "Gestión de direcciones de clientes.")
+public class DireccionRESTControllerV2 {
 
-    private static final Logger logger = LoggerFactory.getLogger(DireccionRESTController.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(DireccionRESTControllerV2.class.getName());
 
     @Autowired
     private DireccionService direccionService;

@@ -1,0 +1,6 @@
+{
+  "detail": "ID de cliente no existe.",
+  "instance": "/api/v2/clientes/9",
+  "status": 404,
+  "title": "Objeto no encontrado"
+}

@@ -1,0 +1,51 @@
+{
+  "_links": {
+    "self": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes/1"
+    },
+    "list-all": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes"
+    },
+    "list-all-by-name": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes/by-pnombre/Juan"
+    },
+    "exists-by-id": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes/exists-by-id/1"
+    },
+    "find-by-numrun": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes/by-numrun/12345678"
+    },
+    "find-by-email": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes/by-email/juan.perez.nuevo%40duoc.cl"
+    },
+    "find-by-fono": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes/by-fono/%2B56999998889"
+    },
+    "update": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes/1"
+    },
+    "delete": {
+      "href": "http://192.168.1.123:60570/api/v2/clientes/1"
+    }
+  },
+  "id": 1,
+  "run": "12345678-9",
+  "nombre": "Juan Pérezoso",
+  "email": "juan.perez.nuevo@duoc.cl",
+  "fono": "+56999998889",
+  "direcciones": [
+    {
+      "id": 1,
+      "numero": 1420,
+      "nroDepto": null,
+      "calle": "Avenida Providencia",
+      "comuna": "Providencia",
+      "region": "Región Metropolitana",
+      "esDefault": true,
+      "clienteId": 1
+    }
+  ],
+  "fechaNacimiento": "1991-05-15",
+  "fechaIngreso": "2026-06-04T20:54:28.000Z",
+  "fechaUltimaActualizacion": "2026-06-12T10:39:10.710Z"
+}

@@ -24,7 +24,7 @@ public class ClienteInputDTO {
     @Pattern(regexp = "^[0-9Kk]$", message = "dìgito verificador debe ser nùmero de 0 a 9 o k")
     private String dvrun;
 
-    @NotBlank(message = "Debe ingresar primer calle.")
+    @NotBlank(message = "Debe ingresar primer nombre.")
     private String pnombre;
 
     private String snombre;

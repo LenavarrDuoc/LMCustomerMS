@@ -1,0 +1,8 @@
+{
+  "instance": "/api/v2/clientes/1",
+  "status": 400,
+  "title": "Error validación de datos.",
+  "Parámetro no válido": {
+    "fono": "Debe incluir símbolo '+', código de país y 9 dìgitos,."
+  }
+}

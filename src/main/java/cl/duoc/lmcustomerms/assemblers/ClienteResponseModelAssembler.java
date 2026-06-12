@@ -17,7 +17,7 @@ public class ClienteResponseModelAssembler implements RepresentationModelAssembl
         return EntityModel.of(dto,
                 linkTo(methodOn(ClienteRESTControllerV2.class).findById(dto.getId())).withSelfRel(),
                 linkTo(methodOn(ClienteRESTControllerV2.class).findAll()).withRel("list-all"),
-                linkTo(methodOn(ClienteRESTControllerV2.class).findAllByPnombre(dto.getNombre())).withRel("list-all-by-name"),
+                linkTo(methodOn(ClienteRESTControllerV2.class).findAllByPnombre(dto.getNombre().split(" ")[0])).withRel("list-all-by-name"),
                 linkTo(methodOn(ClienteRESTControllerV2.class).existsById(dto.getId())).withRel("exists-by-id"),
                 linkTo(methodOn(ClienteRESTControllerV2.class).findByNumRun(Integer.parseInt((dto.getRun() == null ?  "0" : dto.getRun().split("-")[0])))).withRel("find-by-numrun"),//Requirió tratamiento de String de rut para pasar a integer solo el número sin guión ni dígito verificador, o sea 0 si es nulo al correr pruebas.
                 linkTo(methodOn(ClienteRESTControllerV2.class).findByEmail(dto.getEmail())).withRel("find-by-email"),

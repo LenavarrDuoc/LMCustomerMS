@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-06-12T10:43:55.371Z",
+  "status": 400,
+  "error": "Bad Request",
+  "path": "/api/v2/clientes/a"
+}

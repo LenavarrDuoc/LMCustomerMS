@@ -49,6 +49,13 @@ public class GlobalExceptionHandler {
         return problemDetail;
     }
 
+    @ExceptionHandler(ClienteNumrunInvalidoException.class)
+    public ProblemDetail handlerInvalidoNumrun(ClienteNumrunInvalidoException exception){
+        ProblemDetail problemDetail = ProblemDetail.forStatus(400);
+        problemDetail.setTitle(title1);
+        problemDetail.setDetail(exception.getMessage());
+        return problemDetail;
+    }
 
 
     @ExceptionHandler(DireccionNombreExisteException.class)

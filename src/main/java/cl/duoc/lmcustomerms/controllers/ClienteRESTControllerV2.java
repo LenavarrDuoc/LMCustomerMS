@@ -173,13 +173,18 @@ public class ClienteRESTControllerV2 {
                     )
             ),
             @ApiResponse(
+                    responseCode = "204",
+                    description = "No se han encontrado registros de clientes con coincidencia de nombre ingresado.",
+                    content = @Content(schema = @Schema(hidden = true))
+            ),
+            @ApiResponse(
                     responseCode = "400",
                     description = "Sintáxis incorrecta",
                     content = @Content(schema = @Schema(hidden = true))
             ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "No se han encontrado registros de clientes con coincidencia de nombre ingresado.",
+                    description = "No se ha indicado nombre en la URL",
                     content = @Content(schema = @Schema(hidden = true))
             )
     }
@@ -195,7 +200,7 @@ public class ClienteRESTControllerV2 {
         if (!listadoDTO.isEmpty()){
             logger.info(logMsg + "=> encontrado(s) y enlistado(s).");
 
-            return ResponseEntity.ok(CollectionModel.of(listadoDTO, linkTo(methodOn(ClienteRESTControllerV2.class).findAllByPnombre(pnombre)).withSelfRel()));
+            return ResponseEntity.ok(CollectionModel.of(listadoDTO, linkTo(methodOn(ClienteRESTControllerV2.class).findAllByPnombre(pnombre.split(" ")[0])).withSelfRel()));
         }
         logger.info(logMsg + "=> sin coincidencias (vacío).");
         return ResponseEntity.noContent().build();

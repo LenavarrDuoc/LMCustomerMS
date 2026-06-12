@@ -11,13 +11,18 @@ import cl.duoc.lmcustomerms.mappers.ClienteResponseMapper;
 import cl.duoc.lmcustomerms.mappers.ClienteUpdateMapper;
 import cl.duoc.lmcustomerms.models.Cliente;
 import cl.duoc.lmcustomerms.repositories.ClienteRepository;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.util.List;
 
 @Service
+@Validated
 //@Transactional usar transactional para cada función en vez de el servicio en general permite optimizar las funciones
 //@Es mejor importar @Transactional de la librería de spring que la de jakartas ya que la de sprign trae funcionalidades más potentes como las de readOnly para métodos que solo consultan datos.
 public class ClienteService {
@@ -72,6 +77,7 @@ public class ClienteService {
 
     @Transactional(readOnly = true)
     public ClienteResponseDTO findByNumRun(Integer numRun){
+
         Cliente ent = clienteRepository.findByNumrun(numRun);
         if (ent == null){
             throw new ClienteNumrunNoExisteException("R.U.N. de cliente no existe.");
@@ -81,11 +87,12 @@ public class ClienteService {
 
     @Transactional(readOnly = true)
     public List<ClienteResponseDTO> findAllByPnombre(String pnombre){
+
         return clienteRepository.findAllByPnombre(pnombre).stream().map(clienteResponseMapper::toDto).toList();
     }
 
     @Transactional(readOnly = true)
-    public ClienteResponseDTO findByEmail(String email){
+    public ClienteResponseDTO findByEmail(@Email(message = "Entrada no tiene formato de correo.") String email){
         Cliente ent = clienteRepository.findByEmail(email);
         if (ent == null){
             throw new ClienteEmailNoExisteException("Correo de cliente no existe.");

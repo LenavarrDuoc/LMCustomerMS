@@ -1,0 +1,6 @@
+{
+  "detail": "Correo de cliente no existe.",
+  "instance": "/api/v2/clientes/by-email/leo%40gmail.com",
+  "status": 404,
+  "title": "Objeto no encontrado"
+}

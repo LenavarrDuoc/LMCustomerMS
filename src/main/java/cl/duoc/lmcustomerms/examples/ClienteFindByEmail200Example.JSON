@@ -1,0 +1,51 @@
+{
+  "_links": {
+    "self": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes/1"
+    },
+    "list-all": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes"
+    },
+    "list-all-by-name": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes/by-pnombre/Carlos"
+    },
+    "exists-by-id": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes/exists-by-id/1"
+    },
+    "find-by-numrun": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes/by-numrun/11111111"
+    },
+    "find-by-email": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes/by-email/carlos.silva%40email.com"
+    },
+    "find-by-fono": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes/by-fono/%2B56911111111"
+    },
+    "update": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes/1"
+    },
+    "delete": {
+      "href": "http://192.168.1.123:49905/api/v2/clientes/1"
+    }
+  },
+  "id": 1,
+  "run": "11111111-1",
+  "nombre": "Carlos Silva",
+  "email": "carlos.silva@email.com",
+  "fono": "+56911111111",
+  "direcciones": [
+    {
+      "id": 1,
+      "numero": 1420,
+      "nroDepto": null,
+      "calle": "Avenida Providencia",
+      "comuna": "Providencia",
+      "region": "Región Metropolitana",
+      "esDefault": true,
+      "clienteId": 1
+    }
+  ],
+  "fechaNacimiento": "1988-03-12",
+  "fechaIngreso": "2026-06-04T20:54:28.000Z",
+  "fechaUltimaActualizacion": "2026-06-04T20:54:28.000Z"
+}

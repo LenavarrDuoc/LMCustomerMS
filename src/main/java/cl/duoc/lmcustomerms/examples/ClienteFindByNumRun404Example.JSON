@@ -1,0 +1,6 @@
+{
+  "detail": "R.U.N. de cliente no existe.",
+  "instance": "/api/v2/clientes/by-numrun/17777777",
+  "status": 404,
+  "title": "Objeto no encontrado"
+}

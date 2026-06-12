@@ -30,7 +30,7 @@ public class Cliente {
     @Column(name = "dv_run", nullable = false)
     private String dvrun;
 
-    @NotBlank(message = "Debe ingresar primer calle.")
+    @NotBlank(message = "Debe ingresar primer nombre.")
     @Column(name = "p_nombre", nullable = false)
     private String pnombre;
 

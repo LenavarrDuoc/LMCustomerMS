@@ -1,0 +1,32 @@
+{
+  "id": 3,
+  "run": "18765432-2",
+  "nombre": "María López",
+  "email": "ma.lopezg@duoc.cl",
+  "fono": "+56987654324",
+  "direcciones": [
+    {
+      "id": 4,
+      "numero": 1050,
+      "nroDepto": 12,
+      "calle": "Calle Los Alerces",
+      "comuna": "La Florida",
+      "region": "Metropolitana",
+      "esDefault": true,
+      "clienteId": 3
+    },
+    {
+      "id": 5,
+      "numero": 45,
+      "nroDepto": null,
+      "calle": "O'Higgins",
+      "comuna": "Rancagua",
+      "region": "Libertador General Bernardo O'Higgins",
+      "esDefault": false,
+      "clienteId": 3
+    }
+  ],
+  "fechaNacimiento": "1995-10-22",
+  "fechaIngreso": "2026-06-12T10:47:03.826Z",
+  "fechaUltimaActualizacion": "2026-06-12T10:47:03.826Z"
+}

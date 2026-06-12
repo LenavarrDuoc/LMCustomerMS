@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-06-12T10:52:10.683Z",
+  "status": 400,
+  "error": "Bad Request",
+  "path": "/api/v2/clientes/by-numrun/a"
+}
