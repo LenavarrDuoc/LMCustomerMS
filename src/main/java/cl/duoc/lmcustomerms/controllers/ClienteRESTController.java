@@ -9,6 +9,7 @@ import cl.duoc.lmcustomerms.services.ClienteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -43,7 +44,8 @@ public class ClienteRESTController {
                     description = "Se ha creado registro",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = ClienteResponseDTO.class)
+                            schema = @Schema(implementation = ClienteResponseDTO.class),
+                            examples = @ExampleObject(name = "Respuesta guardado de Cliente.", externalValue = "src/main/java/cl/duoc/lmcustomerms/examples/ClienteSave201.json")
                     )
             ),
             @ApiResponse(

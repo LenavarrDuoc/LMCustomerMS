@@ -11,6 +11,7 @@ import cl.duoc.lmcustomerms.services.ClienteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -57,18 +58,23 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha creado registro",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = EntityModel.class)
+                            schema = @Schema(implementation = EntityModel.class),
+                            examples = @ExampleObject(name = "Respuesta 201 guardado de Cliente.", externalValue = "/cl/duoc/lmcustomerms/examples/ClienteSave201Example.json")
                     )
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Sintáxis incorrecta",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 400 guardado de Cliente.", externalValue = "/cl/duoc/lmcustomerms/examples/ClienteSave400Example.json")
+                    )
             ),
             @ApiResponse(
                     responseCode = "409",
                     description = "Conflicto al hacer solicitud (ej: clienteId ya existe)",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 409 guardado de Cliente.", externalValue = "/cl/duoc/lmcustomerms/examples/ClienteSave409Example.json")
+                    )
             )
     }
     )
@@ -92,7 +98,7 @@ public class ClienteRESTControllerV2 {
     @ApiResponses( value = {
             @ApiResponse(
                     responseCode = "200",
-                    description = "Se han encontrado registros",
+                    description = "Se han encontrado registros.",
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = CollectionModel.class)
@@ -100,7 +106,7 @@ public class ClienteRESTControllerV2 {
             ),
             @ApiResponse(
                     responseCode = "400",
-                    description = "Sintáxis incorrecta",
+                    description = "Sintáxis incorrecta.",
                     content = @Content(schema = @Schema(hidden = true))
             ),
             @ApiResponse(
@@ -179,12 +185,12 @@ public class ClienteRESTControllerV2 {
             ),
             @ApiResponse(
                     responseCode = "400",
-                    description = "Sintáxis incorrecta",
+                    description = "Sintáxis incorrecta.",
                     content = @Content(schema = @Schema(hidden = true))
             ),
             @ApiResponse(
                     responseCode = "404",
-                    description = "No se ha indicado nombre en la URL",
+                    description = "No se ha indicado nombre en la URL.",
                     content = @Content(schema = @Schema(hidden = true))
             )
     }

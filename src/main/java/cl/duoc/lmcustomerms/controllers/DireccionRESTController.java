@@ -175,7 +175,7 @@ public class DireccionRESTController {
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(updated.getId()).toUri();
         //de componentes de constructor URI // de la actual request //ruta de id // sacar la id del obj creado // transformar a URI.
         logger.info(logMsg + "=> actualizado.");
-        return ResponseEntity.status(200).location(location).body(updated);
+        return ResponseEntity.ok().location(location).body(updated);
         //devuelve el estado y la locación //devuelve el objeto creado
     }
 
