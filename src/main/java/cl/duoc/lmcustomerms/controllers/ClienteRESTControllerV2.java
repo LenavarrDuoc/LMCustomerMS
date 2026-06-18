@@ -66,7 +66,7 @@ public class ClienteRESTControllerV2 {
                     responseCode = "400",
                     description = "Sintáxis incorrecta",
                     content = @Content(
-                            mediaType = "application/json",
+                            mediaType = "html",
                             schema = @Schema(hidden = true),
                             examples = @ExampleObject(name = "Respuesta 400 guardado de Cliente.", ref = "ClienteSave400Example")
                     )
@@ -75,7 +75,7 @@ public class ClienteRESTControllerV2 {
                     responseCode = "409",
                     description = "Conflicto al hacer solicitud (ej: clienteId ya existe)",
                     content = @Content(
-                            mediaType = "application/json",
+                            mediaType = "html",
                             schema = @Schema(hidden = true),
                             examples = @ExampleObject(name = "Respuesta 409 guardado de Cliente.", ref = "ClienteSave409Example")
                     )
@@ -85,13 +85,13 @@ public class ClienteRESTControllerV2 {
 
     @PostMapping
     @Operation(summary = "Crear cliente.", description = "Guardar un registro de nuevo cliente."
-//                ,requestBody = @RequestBody(
-//                        content = @Content(
-//                        mediaType = "application/json",
-//                        schema = @Schema(implementation = EntityModel.class),
-//                        examples = @ExampleObject(name = "ClienteGuardar" , ref = "ClienteInputDTO")
-//                    )
-//                )
+                ,requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                        content = @Content(
+                        mediaType = "application/json",
+                        schema = @Schema(implementation = EntityModel.class),
+                        examples = @ExampleObject(name = "Ingreso de Creación y Guardado de Cliente" , ref = "ClienteSaveInputExample")
+                    )
+                )
     )
     public ResponseEntity<EntityModel<ClienteResponseDTO>> save(@Valid @RequestBody ClienteInputDTO dto){
         String logMsgRequest = "Recibiendo solicitud para crear/guardar cliente.";
@@ -186,7 +186,7 @@ public class ClienteRESTControllerV2 {
                     responseCode = "200",
                     description = "Se han encontrado registros de clientes con coincidencia de Nombre ingresado.",
                     content = @Content(
-                            mediaType = "application/json",
+                            mediaType = "html",
                             schema = @Schema(implementation = CollectionModel.class),
                             examples = @ExampleObject(name = "Listado de clientes encontrados por primer nombre.", ref = "ClienteFindAllByPnombre200Example")
                     )
@@ -209,8 +209,10 @@ public class ClienteRESTControllerV2 {
             @ApiResponse(
                     responseCode = "404",
                     description = "No se ha indicado nombre en la URL.",
-                    content = @Content(schema = @Schema(hidden = true),
-                            examples = @ExampleObject(name = "Respuesta 200 Registros de Clientes.", ref = "ClienteFindAllByPnombre404Example")
+                    content = @Content(
+                            mediaType = "html",
+                            schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 404 Registros de Clientes.", ref = "ClienteFindAllByPnombre404Example")
                     )
             )
     }
@@ -283,13 +285,20 @@ public class ClienteRESTControllerV2 {
             @ApiResponse(
                     responseCode = "400",
                     description = "Sintáxis incorrecta",
-                    content = @Content(schema = @Schema(hidden = true)
+                    content = @Content(
+                            mediaType = "html",
+                            schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 400 Buscar Registro de Cliente por R.U.N..", ref = "ClienteFindByNumRun400Example")
                     )
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "No se ha encontrado registro perteneciente a cliente según número de R.U.N. ingresado.",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(
+                            mediaType = "html",
+                            schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 409 Buscar Registro de Cliente por R.U.N..", ref = "ClienteFindByNumRun409Example")
+                    )
             )
     }
     )
@@ -316,7 +325,7 @@ public class ClienteRESTControllerV2 {
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = EntityModel.class),
-                            examples = @ExampleObject(name = "Respuesta 200 Registro de Cliente por Email.", ref = "ClienteFindByEmail200Example")
+                            examples = @ExampleObject(name = "Respuesta 200 Buscar Registro de Cliente por Email.", ref = "ClienteFindByEmail200Example")
                     )
             ),
             @ApiResponse(
@@ -327,7 +336,11 @@ public class ClienteRESTControllerV2 {
             @ApiResponse(
                     responseCode = "404",
                     description = "No se ha encontrado registro perteneciente a cliente según email ingresado.",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(
+                            mediaType = "html",
+                            schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 400 Buscar Registro de Cliente por Email.", ref = "ClienteFindByEmail404Example")
+                    )
             )
     }
     )
@@ -399,17 +412,33 @@ public class ClienteRESTControllerV2 {
             @ApiResponse(
                     responseCode = "400",
                     description = "Sintáxis incorrecta",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(
+                            mediaType = "html",
+                            schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 400 Actualización de Cliente.", ref = "ClienteUpdate400Example")
+                    )
             ),
             @ApiResponse(
                     responseCode = "404",
                     description = "No se han encontrado registro de cliente según ID ingresado.",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(
+                            mediaType = "html",
+                            schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 404 Actualización de Cliente.", ref = "ClienteUpdate404Example")
+                    )
             )
     }
     )
     @PutMapping("/{id}")
-    @Operation(summary = "Actualizar cliente por ID", description = "Actualiza información de registro perteneciente a cliente según ID ingresado.")
+    @Operation(summary = "Actualizar cliente por ID", description = "Actualiza información de registro perteneciente a cliente según ID ingresado."
+            ,requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+            content = @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(implementation = EntityModel.class),
+                    examples = @ExampleObject(name = "Ingreso de Actualización de Cliente" , ref = "ClienteUpdateInputExample")
+            )
+    )
+    )
     public ResponseEntity<EntityModel<ClienteResponseDTO>> update(@Parameter(description = "ID de cliente", required = true) @Valid @RequestBody ClienteUpdateDTO dto, @PathVariable Long id){
         String logMsgRequest = "Recibiendo solicitud para actualizar cliente con ID: " + id + ".";
         String logMsg = "Solicitud para actualizar cliente con ID: " + id + ".";

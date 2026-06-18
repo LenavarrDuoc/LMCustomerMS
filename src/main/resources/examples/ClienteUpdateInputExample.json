@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "numrun": 12345678,
+  "dvrun": "9",
+  "pnombre": "Juan",
+  "snombre": "Ignacio",
+  "appaterno": "Pérez",
+  "apmaterno": "González",
+  "email": "juan.perez.nuevo@duoc.cl",
+  "fono": "+5699999888",
+  "fechaNacimiento": "1990-05-15"
+}

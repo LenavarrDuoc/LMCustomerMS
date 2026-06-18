@@ -1,0 +1,27 @@
+{
+  "numrun": 12345678,
+  "dvrun": "9",
+  "pnombre": "Juan",
+  "snombre": "Ignacio",
+  "appaterno": "Pérez",
+  "apmaterno": "Cotapos",
+  "email": "juan.perez@duoc.cl",
+  "fono": "+56912345675",
+  "fechaNacimiento": "1990-05-15",
+  "direcciones": [
+    {
+      "calle": "Avenida Siempre Viva",
+      "numero": 742,
+      "nroDepto": null,
+      "comuna": "Puente Alto",
+      "region": "Metropolitana"
+    },
+    {
+      "calle": "Paseo Ahumada",
+      "numero": 123,
+      "nroDepto": 405,
+      "comuna": "Santiago",
+      "region": "Metropolitana"
+    }
+  ]
+}
