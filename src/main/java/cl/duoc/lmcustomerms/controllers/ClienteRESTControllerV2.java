@@ -59,28 +59,40 @@ public class ClienteRESTControllerV2 {
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = EntityModel.class),
-                            examples = @ExampleObject(name = "Respuesta 201 guardado de Cliente.", externalValue = "/cl/duoc/lmcustomerms/examples/ClienteSave201Example.json")
+                            examples = @ExampleObject(name = "Respuesta 201 guardado de Cliente.", ref = "ClienteSave201Example")
                     )
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Sintáxis incorrecta",
-                    content = @Content(schema = @Schema(hidden = true),
-                            examples = @ExampleObject(name = "Respuesta 400 guardado de Cliente.", externalValue = "/cl/duoc/lmcustomerms/examples/ClienteSave400Example.json")
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 400 guardado de Cliente.", ref = "ClienteSave400Example")
                     )
             ),
             @ApiResponse(
                     responseCode = "409",
                     description = "Conflicto al hacer solicitud (ej: clienteId ya existe)",
-                    content = @Content(schema = @Schema(hidden = true),
-                            examples = @ExampleObject(name = "Respuesta 409 guardado de Cliente.", externalValue = "/cl/duoc/lmcustomerms/examples/ClienteSave409Example.json")
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 409 guardado de Cliente.", ref = "ClienteSave409Example")
                     )
             )
     }
     )
 
     @PostMapping
-    @Operation(summary = "Crear cliente.", description = "Guardar un registro de nuevo cliente.")
+    @Operation(summary = "Crear cliente.", description = "Guardar un registro de nuevo cliente."
+//                ,requestBody = @RequestBody(
+//                        content = @Content(
+//                        mediaType = "application/json",
+//                        schema = @Schema(implementation = EntityModel.class),
+//                        examples = @ExampleObject(name = "ClienteGuardar" , ref = "ClienteInputDTO")
+//                    )
+//                )
+    )
     public ResponseEntity<EntityModel<ClienteResponseDTO>> save(@Valid @RequestBody ClienteInputDTO dto){
         String logMsgRequest = "Recibiendo solicitud para crear/guardar cliente.";
         String logMsg = "Solicitud para crear/guardar cliente.";
@@ -101,7 +113,8 @@ public class ClienteRESTControllerV2 {
                     description = "Se han encontrado registros.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = CollectionModel.class)
+                            schema = @Schema(implementation = CollectionModel.class)//,
+                            //examples = @ExampleObject(name = "Respuesta 200 Registros de Clientes.", ref = "")
                     )
             ),
             @ApiResponse(
@@ -138,7 +151,6 @@ public class ClienteRESTControllerV2 {
                     responseCode = "200",
                     description = "Registro de cliente con ID ingresado existe.",
                     content = @Content(
-                            mediaType = "application/json",
                             schema = @Schema(implementation = Boolean.class)
                     )
             ),
@@ -175,13 +187,19 @@ public class ClienteRESTControllerV2 {
                     description = "Se han encontrado registros de clientes con coincidencia de Nombre ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = CollectionModel.class)
+                            schema = @Schema(implementation = CollectionModel.class),
+                            examples = @ExampleObject(name = "Listado de clientes encontrados por primer nombre.", ref = "ClienteFindAllByPnombre200Example")
                     )
             ),
             @ApiResponse(
                     responseCode = "204",
                     description = "No se han encontrado registros de clientes con coincidencia de nombre ingresado.",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(
+                                mediaType = "application/json",
+                                schema = @Schema(hidden = true)
+
+                    )
+
             ),
             @ApiResponse(
                     responseCode = "400",
@@ -191,7 +209,9 @@ public class ClienteRESTControllerV2 {
             @ApiResponse(
                     responseCode = "404",
                     description = "No se ha indicado nombre en la URL.",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(schema = @Schema(hidden = true),
+                            examples = @ExampleObject(name = "Respuesta 200 Registros de Clientes.", ref = "ClienteFindAllByPnombre404Example")
+                    )
             )
     }
     )
@@ -218,7 +238,8 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha encontrado registro perteneciente a cliente según ID ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = EntityModel.class)
+                            schema = @Schema(implementation = EntityModel.class),
+                            examples = @ExampleObject(name = "Respuesta 200 Registro de Cliente por ID.", ref = "ClienteFindById200Example")
                     )
             ),
             @ApiResponse(
@@ -255,13 +276,15 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha encontrado registro perteneciente a cliente según número de R.U.N. ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = EntityModel.class)
+                            schema = @Schema(implementation = EntityModel.class),
+                            examples = @ExampleObject(name = "Respuesta 200 Registro de Cliente por R.U.N.", ref = "ClienteFindByNumRun200Example")
                     )
             ),
             @ApiResponse(
                     responseCode = "400",
                     description = "Sintáxis incorrecta",
-                    content = @Content(schema = @Schema(hidden = true))
+                    content = @Content(schema = @Schema(hidden = true)
+                    )
             ),
             @ApiResponse(
                     responseCode = "404",
@@ -292,7 +315,8 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha encontrado registro perteneciente a cliente según email ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = EntityModel.class)
+                            schema = @Schema(implementation = EntityModel.class),
+                            examples = @ExampleObject(name = "Respuesta 200 Registro de Cliente por Email.", ref = "ClienteFindByEmail200Example")
                     )
             ),
             @ApiResponse(
@@ -329,7 +353,8 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha encontrado registro perteneciente a cliente según número telefónico ingresado.",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = EntityModel.class)
+                            schema = @Schema(implementation = EntityModel.class),
+                            examples = @ExampleObject(name = "Respuesta 200 Registro de Cliente por número telefónico.", ref = "ClienteFindByFono200Example")
                     )
             ),
             @ApiResponse(
@@ -367,7 +392,8 @@ public class ClienteRESTControllerV2 {
                     description = "Se ha actualizado registro",
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = EntityModel.class)
+                            schema = @Schema(implementation = EntityModel.class),
+                            examples = @ExampleObject(name = "Respuesta 200 Actualización de Cliente por ID.", ref = "ClienteUpdate200Example")
                     )
             ),
             @ApiResponse(

@@ -27,3 +27,4 @@ public class ClienteResponseModelAssembler implements RepresentationModelAssembl
         );
     }
 }
+
