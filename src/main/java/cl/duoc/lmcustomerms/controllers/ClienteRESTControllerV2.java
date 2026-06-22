@@ -22,14 +22,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.MediaTypes;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
@@ -51,6 +51,10 @@ public class ClienteRESTControllerV2 {
     @Autowired
     private ClienteOrderResponseModelAssembler clienteOrderResponseModelAssembler;
 
+    /*Se agrega "produces = MediaTypes.HAL_JSON_VALUE" a configuración de anotaciones HTTP de las funciones que devuelven un JSON.
+    Esto es útil para el FrontEnd y navegación en general ya que el JSON que devuelve lo interpreta como un .htlm
+    Por lo tanto, los enlaces de referencia que trae se vuelven realmente enlaces en vez de solo ser texto plano.
+    Esto lo aprovecha el navegador o JavaScript al poder detectar que es un enlace o incluso en automatización de procesos.*/
     //CREATE:
     @ApiResponses( value = {
             @ApiResponse(
@@ -83,7 +87,7 @@ public class ClienteRESTControllerV2 {
     }
     )
 
-    @PostMapping
+    @PostMapping(produces = MediaTypes.HAL_JSON_VALUE)
     @Operation(summary = "Crear cliente.", description = "Guardar un registro de nuevo cliente."
                 ,requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                         content = @Content(
@@ -129,7 +133,7 @@ public class ClienteRESTControllerV2 {
             )
     }
     )
-    @GetMapping
+    @GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
     @Operation(summary = "Listar todos los clientes.", description = "Muestra todos los registros de clientes.")
     public ResponseEntity<CollectionModel<EntityModel<ClienteResponseDTO>>> findAll(){
         String logMsgRequest = "Recibiendo solicitud para buscar listado de clientes.";
@@ -217,9 +221,11 @@ public class ClienteRESTControllerV2 {
             )
     }
     )
-    @GetMapping("/by-pnombre/{pnombre}")
+    /*Se cambia el path de "/by-pnombre/{pnombre} con @PathVariable en los atributos
+    a path "/by-pnombre" con @RequestParam(value = "pnombre") ya que pnombre no es un valor único sino que puede coincidir con muchos.*/
+    @GetMapping(value = "/by-pnombre", produces = MediaTypes.HAL_JSON_VALUE)
     @Operation(summary = "Encontrar clientes por nombre", description = "Trae el registro peteneciente a todos los clientes coincidentes con primer nombre ingresado.")
-    public ResponseEntity<CollectionModel<EntityModel<ClienteResponseDTO>>> findAllByPnombre(@Parameter(description = "Primer nombre de cliente(s) a buscar", required = true) @PathVariable String pnombre){
+    public ResponseEntity<CollectionModel<EntityModel<ClienteResponseDTO>>> findAllByPnombre(@Parameter(description = "Primer nombre de cliente(s) a buscar", required = true) @RequestParam(value = "pnombre") String pnombre) {
         String logMsgRequest = "Recibiendo solicitud para buscar listado de clientes coincidentes con primer nombre: " + pnombre + ".";
         String logMsg = "Solicitud para buscar listado de clientes coincidentes con primer nombre: " + pnombre + ".";
         logger.info(logMsgRequest);
@@ -231,7 +237,10 @@ public class ClienteRESTControllerV2 {
             return ResponseEntity.ok(CollectionModel.of(listadoDTO, linkTo(methodOn(ClienteRESTControllerV2.class).findAllByPnombre(pnombre.split(" ")[0])).withSelfRel()));
         }
         logger.info(logMsg + "=> sin coincidencias (vacío).");
-        return ResponseEntity.noContent().build();
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("X-Status-Message", "Sin coincidencias para el nombre ingresado");
+        //Se cambia a respuesta 200 cuando está vacía la respuesta. Esto es porque, de no enviar lista vacía, tampoco se envían los links de referencia para que los vea el FrontEnd.
+        return ResponseEntity.ok().build();
     }
 
     @ApiResponses( value = {
@@ -256,7 +265,7 @@ public class ClienteRESTControllerV2 {
             )
     }
     )
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", produces = MediaTypes.HAL_JSON_VALUE)
     @Operation(summary = "Encuentra cliente por ID", description = "Trae el registro perteneciente a un cliente según ID ingresado.")
     public ResponseEntity<EntityModel<ClienteOrderResponseDTO>> findById(@Parameter(description = "ID de cliente", required = true) @PathVariable Long id){
         String logMsgRequest = "Recibiendo solicitud para buscar cliente por ID: " + id + ".";
@@ -302,7 +311,7 @@ public class ClienteRESTControllerV2 {
             )
     }
     )
-    @GetMapping("/by-numrun/{numrun}")
+    @GetMapping(value = "/by-numrun/{numrun}", produces = MediaTypes.HAL_JSON_VALUE)
     @Operation(summary = "Encuentra cliente por Número de R.U.N.", description = "Trae el registro perteneciente a cliente según Número de R.U.N. ingresado.")
     public ResponseEntity<EntityModel<ClienteResponseDTO>> findByNumRun(@Parameter(description = "Número de R.U.N. de cliente", required = true) @PathVariable Integer numrun){
         String logMsgRequest = "Recibiendo solicitud para buscar cliente por R.U.N.: " + numrun + ".";
@@ -344,7 +353,7 @@ public class ClienteRESTControllerV2 {
             )
     }
     )
-    @GetMapping("/by-email/{email}")
+    @GetMapping(value = "/by-email/{email}", produces = MediaTypes.HAL_JSON_VALUE)
     @Operation(summary = "Encuentra cliente por email.", description = "Trae registro perteneciente a cliente según email ingresado.")
     public ResponseEntity<EntityModel<ClienteResponseDTO>> findByEmail(@Parameter(description = "Email de cliente", required = true) @PathVariable String email){
         String logMsgRequest = "Recibiendo solicitud para buscar cliente por correo electrónico: " + email + ".";
@@ -382,7 +391,7 @@ public class ClienteRESTControllerV2 {
             )
     }
     )
-    @GetMapping("/by-fono/{fono}")
+    @GetMapping(value = "/by-fono/{fono}", produces = MediaTypes.HAL_JSON_VALUE)
     @Operation(summary = "Encuentra cliente por número telefónico", description = "Trae el registro pertenenciente a cliente según número telefónico ingresado.")
     public ResponseEntity<EntityModel<ClienteResponseDTO>> findByFono(@Parameter(description = "Número telefónico de cliente", required = true) @PathVariable String fono){
         String logMsgRequest = "Recibiendo solicitud para buscar cliente por teléfono registrado: " + fono + ".";
@@ -429,7 +438,7 @@ public class ClienteRESTControllerV2 {
             )
     }
     )
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", produces = MediaTypes.HAL_JSON_VALUE)
     @Operation(summary = "Actualizar cliente por ID", description = "Actualiza información de registro perteneciente a cliente según ID ingresado."
             ,requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
             content = @Content(
