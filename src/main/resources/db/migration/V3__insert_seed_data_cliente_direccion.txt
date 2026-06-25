@@ -13,7 +13,8 @@ INSERT INTO cliente (
       );
 
 -- 2. Insertar Datos de Direcciones vinculadas a los Clientes
-INSERT INTO direccion (es_default, nro_depto, numero, fk_cliente_id, calle, comuna, region
+INSERT INTO direccion (
+    es_default, nro_depto, numero, fk_cliente_id, calle, comuna, region
 ) VALUES
 -- Cambiamos el NULL por 0 para la casa de Carlos
 (TRUE, 0, 1420, 1, 'Avenida Providencia', 'Providencia', 'Región Metropolitana'),

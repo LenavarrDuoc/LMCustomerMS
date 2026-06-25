@@ -12,8 +12,6 @@ public interface DireccionRepository extends JpaRepository<Direccion, Long> {
 
     Direccion findByCalle(String calle);
 
-    boolean existsDireccionByCalleAndNumero(@NotBlank String calle, Integer numero);
-
     boolean existsDireccionByCalleAndNumeroAndNroDepto(String calle, Integer numero, Integer nroDepto);
 
     List <Direccion> findAllByClienteId(Long id);
