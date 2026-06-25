@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  lMCustomerMS:
+  lmcustomerms:
     build: .
-    container_name: lMCustomerMS
+    container_name: lmcustomerms
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
