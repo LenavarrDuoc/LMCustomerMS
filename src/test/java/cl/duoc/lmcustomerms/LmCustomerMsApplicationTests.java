@@ -12,10 +12,10 @@ import org.springframework.test.context.ActiveProfiles;
         "spring.cloud.discovery.enabled=false",
         "spring.main.allow-bean-definition-overriding=true"
 })
-@EnableAutoConfiguration(exclude = {
-        DataSourceAutoConfiguration.class,
-        HibernateJpaAutoConfiguration.class
-})
+//@EnableAutoConfiguration(exclude = {
+//        DataSourceAutoConfiguration.class,
+//        HibernateJpaAutoConfiguration.class
+//})
 @ActiveProfiles("test")
 class LmCustomerMsApplicationTests {
 
